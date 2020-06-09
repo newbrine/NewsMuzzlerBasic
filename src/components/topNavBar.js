@@ -6,13 +6,12 @@ import "../stylesheets/topNavBar.css";
 
 const navProps = {
     heading: "Content",
-    userName: "Shuofeng Wang",
-    userImgUrl: "https://bit.ly/dan-abramov",
+    userName: "Valto",
+    userImgUrl: "https://ca.slack-edge.com/TJ8BLJUMN-UHWUEGG10-8358a59801b9-512",
     notificationContent: "No New Notifications",
 }
 
 const Header = props => {
-
 
     return (
         <ThemeProvider>
@@ -39,7 +38,7 @@ const Header = props => {
                     <div className={'col-6'}></div>
                     <Flex className={'col-4'} flexDirection={'row'} justifyContent={'space-around'} alignItems={'center'}>
                         <Box >
-                            <InputGroup>
+                            <InputGroup borderColor={'#6E61BF'}>
                                 <InputLeftElement children={<Icon name="search" color="#595959" />}  />
                                 <Input placeholder="Search" />
                             </InputGroup>

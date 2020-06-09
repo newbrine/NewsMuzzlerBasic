@@ -26,7 +26,7 @@
     color: #FFFFFF;
 }
 
-.row {
+.leftMenu-row {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -34,7 +34,7 @@
     padding-left: 40px;
 }
 
-.row-btn {
+.leftMenu-row-btn {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -42,5 +42,5 @@
     padding-left: 70px;
 }
 
-.col-2 {width: 40%}
+.leftMenu-col-2 {width: 40%}
 /* .col-btn {width: 20%} */

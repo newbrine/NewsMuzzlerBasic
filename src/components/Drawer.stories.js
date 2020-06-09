@@ -6,4 +6,4 @@ export default {
     title: 'Drawer',
   };
 
-export const Default = () => <DrawerExample />;
+export const leftMenu = () => <DrawerExample />;
