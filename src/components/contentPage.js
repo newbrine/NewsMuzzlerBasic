@@ -1,7 +1,9 @@
 import React from "react";
 import LeftMenu from "./leftMenu";
 import TopNav from "./topNavBar";
+import HorizontalContentCard from "./horizontalContentCard";
 import {Box, Heading, SimpleGrid, Stack} from "@chakra-ui/core";
+import RecommendContentCard from "./recommendContentCard";
 
 export default class contentPage extends React.Component {
     render() {
@@ -16,12 +18,23 @@ export default class contentPage extends React.Component {
                 <Box backgroundColor={'#E5E5E5'}>
                     <TopNav />
                     <SimpleGrid columns={2} gridTemplateColumns={'80% 20%'}>
-                        <Stack className={'content-card'} spacing={8}>
+                        <Stack>
+                            <HorizontalContentCard />
+                            <HorizontalContentCard />
+                            <HorizontalContentCard />
+                            <HorizontalContentCard />
+                            <HorizontalContentCard />
 
                         </Stack>
 
-                        <Stack className={'recommendation-list'} spacing={8}>
-                            <Heading as="h3" size="lg" fontSize={'20px'}>Based on your history</Heading>
+                        <Stack className={'recommendation-list'} >
+                            <Heading as="h3" size="lg" fontSize={'20px'} marginTop={'-2.5%'} letterSpacing={'0px'} fontFamily={'Arial,Helvetica,sans-serif'}>
+                                Based on your history
+                            </Heading>
+
+                            <RecommendContentCard />
+                            <RecommendContentCard />
+
                         </Stack>
                     </SimpleGrid>
                 </Box>

@@ -27,6 +27,7 @@ const Header = props => {
                     color="#000000"
                     height={'60px'}
                     boxShadow={'0px 0px 4px rgba(0, 0, 0, 0.25)'}
+                    marginBottom={'2%'}
                     {...props}
                 >
                     <box align="left" className={'col-2'}>
