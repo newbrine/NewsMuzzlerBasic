@@ -1,4 +1,4 @@
-.btnTxt {
+.leftMenu-btnTxt {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -12,7 +12,7 @@
     color: #FFFFFF;
 }
 
-.header {
+.leftMenu-header {
     font-family: SF Pro Display;
     font-style: normal;
     font-weight: 600;
@@ -42,5 +42,5 @@
     padding-left: 70px;
 }
 
-.leftMenu-col-2 {width: 40%}
+.leftMenu-col-2 {width: 30%}
 /* .col-btn {width: 20%} */

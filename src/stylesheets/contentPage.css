@@ -1,0 +1,35 @@
+.contentPage-topNav {
+    grid-area: header;
+    width: 100%;
+}
+.contentPage-leftMenu {
+    grid-area: menu;
+    width: 100%;
+}
+.contentPage-Main { grid-area: main; }
+.contentPage-rightBar { grid-area: right; }
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'menu header header header header'
+    'menu main   main   main   right';
+    grid-gap: 10px;
+    /*background-color: #2196F3;*/
+    /*padding: 10px;*/
+    margin: 0;
+    height: 100%;
+}
+
+.grid-container > div {
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    /*text-align: center;*/
+    /*padding: 20px 0;*/
+    /*font-size: 30px;*/
+}
+
+.contentPage-body {
+    /*margin-left: 0px;*/
+    /*margin-top: 0px;*/
+    /*height: 100%;*/
+}
