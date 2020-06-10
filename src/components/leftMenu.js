@@ -14,7 +14,7 @@ export default class LeftMenu extends React.Component {
 
                     <Stack spacing={0}>
 
-                        <Box marginLeft={[2,4,6,8]} paddingTop={'30px'} paddingBottom={'30px'} color={'#FFFFFF'}>
+                        <Box paddingTop={'30px'} paddingBottom={'30px'} color={'#FFFFFF'}>
                             <div className="leftMenu-row">
                                 <div className={"leftMenu-col-2"} >
                                     <Image  size="40px" src="https://cdn.iconscout.com/icon/free/png-256/news-1445770-1224362.png"></Image>

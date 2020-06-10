@@ -39,8 +39,26 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-left: 70px;
+    padding: 20%;
 }
 
 .leftMenu-col-2 {width: 30%}
 /* .col-btn {width: 20%} */
+
+@media (max-width: 1280px) {
+    .leftMenu-row-btn {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 5%;
+    }
+
+    .leftMenu-row {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-left: 5%;
+    }
+}
