@@ -12,6 +12,15 @@ const horizontalContentCardProps = {
 };
 
 export default class HorizontalContentCard extends React.Component {
+
+    closeLeftMenu = () => {
+        // document.getElementById("MainPage-SimpleGrid").style.columns = "100% 1";
+        // document.getElementById("leftMenu").style.width = "0";
+        document.getElementById("leftMenu").style.display = "none";
+        // document.getElementById("mainPage").style.marginLeft = "0";
+        document.getElementById("mainPage").style.width = "1700px";
+    }
+
     render() {
         return (
             <ThemeProvider>
@@ -25,6 +34,7 @@ export default class HorizontalContentCard extends React.Component {
                     borderRadius={'2px'}
                     margin={'0% 2% 2% 2%'}
                     height={'150px'}
+                    onClick={this.closeLeftMenu}
                 >
                     <Image src={horizontalContentCardProps.imageUrl} alt={horizontalContentCardProps.imageAlt} width={381} height={254} />
 

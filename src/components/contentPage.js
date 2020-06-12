@@ -8,14 +8,14 @@ import RecommendContentCard from "./recommendContentCard";
 export default class contentPage extends React.Component {
     render() {
         return (
-            <SimpleGrid columns={2} gridTemplateColumns={'17% 83%'}>
+            <SimpleGrid id={"MainPage-SimpleGrid"} columns={2} gridTemplateColumns={'17% 83%'}>
                 {/*Left Part*/}
-                <Box backgroundColor={'#2b2737'} >
+                <Box id={"leftMenu"} backgroundColor={'#2b2737'} >
                     <LeftMenu />
                 </Box>
 
                 {/*Right Part*/}
-                <Box backgroundColor={'#E5E5E5'}>
+                <Box id={"mainPage"} backgroundColor={'#E5E5E5'}>
                     <TopNav />
                     <SimpleGrid columns={2} gridTemplateColumns={'80% 20%'}>
                         <Stack>

@@ -10,7 +10,13 @@ export default class LeftMenu extends React.Component {
 
                 <Box
                     // width={["100%", "40%", "20%"]}
-                    backgroundColor="#2B2737">
+                    backgroundColor="#2B2737"
+                    transition={'0.5s'}
+                    // height={'100%'}
+                    zIndex={'1'}
+                    top={'0'}
+                    left={'0'}
+                >
 
                     <Stack spacing={0}>
 

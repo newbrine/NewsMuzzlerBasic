@@ -1,7 +1,12 @@
+#mainPage {
+    transition: margin-left .5s;
+}
+
 .contentPage-topNav {
     grid-area: header;
     width: 100%;
 }
+
 .contentPage-leftMenu {
     grid-area: menu;
     width: 100%;
