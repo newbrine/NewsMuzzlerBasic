@@ -1,5 +1,5 @@
 import React from 'react'
-import {ChannelsMain} from './channels'
+import ChannelsMain from './channels'
 
 export default{
     component: ChannelsMain,
