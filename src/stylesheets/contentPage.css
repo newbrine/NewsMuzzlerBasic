@@ -1,7 +1,12 @@
+#mainPage {
+    transition: margin-left .5s;
+}
+
 .contentPage-topNav {
     grid-area: header;
     width: 100%;
 }
+
 .contentPage-leftMenu {
     grid-area: menu;
     width: 100%;
@@ -32,4 +37,10 @@
     /*margin-left: 0px;*/
     /*margin-top: 0px;*/
     /*height: 100%;*/
+}
+
+.content-card-list {
+    margin-top: 48px;
+    margin-left: auto;
+    margin-right: auto;
 }
