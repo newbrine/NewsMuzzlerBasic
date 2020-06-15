@@ -1,0 +1,151 @@
+.channelsMain-header {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+    display: flex; 
+    align-items: center;
+    letter-spacing: 1px;
+    
+    color: #000000;
+}
+
+.channelsMain-subHeader {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 28px;
+    display: flex; 
+    align-items: center;
+    letter-spacing: 1px;
+    
+    color: #000000;
+}
+
+.channelsMain-number {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+
+    color: #096DD9;
+}
+
+.channelsMain-headerNumber {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+    display: flex; 
+    align-items: center;
+    letter-spacing: 1px;
+
+    color: #096DD9;
+}
+
+.channelsMain-row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 40px;
+    padding-top: 15px;
+}
+
+.channelsMain-Btn {
+    /* NewszMuzzler Bright */
+
+    border: 1px solid #6E61BF;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.channelsMain-xsBtnTxt {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+
+    display: flex;
+    align-items: center;
+
+    /* Grey / grey-1 */
+
+    color: #FFFFFF;
+}
+
+.channelsMain-lgBtnTxt {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    /* Grey / grey-1 */
+    color: #FFFFFF;
+}
+
+.channelsMain-text{
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    /* display: flex; */
+    
+    letter-spacing: 1px;
+
+    color: #000000;
+
+}
+
+.ellipsis-right {
+    top: 0;
+    right: 0;
+}
+
+.createEmail-header {
+    font-family: SF Pro Display;
+    font-tyle: Regular;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.createEmail-btns {
+    background-color: #F2F2F2;
+    font-family: SF Pro Display;
+    font-size: 12px;
+    color: #595959;
+    border: 1px solid #6E61BF;
+    border-radius: 4px;
+}
+
+.channelsMain-col-1 {width: 8.33%}
+.channelsMain-col-2 {width: 16.66%}
+.channelsMain-col-3 {width: 25%}
+.channelsMain-col-4 {width: 33.33%}
+.channelsMain-col-5 {width: 41.66%}
+.channelsMain-col-6 {width: 50%}
+.channelsMain-col-7 {width: 58.33%}
+.channelsMain-col-8 {width: 66.66%}
+.channelsMain-col-9 {width: 75%}
+.channelsMain-col-10 {width: 83.33%}
+.channelsMain-col-11 {width: 91.66%}
+.channelsMain-col-12 {width: 100%}
