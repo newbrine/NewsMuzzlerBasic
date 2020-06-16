@@ -1,12 +1,17 @@
 import React from 'react';
 import {ThemeProvider, CSSReset, Box, Stack, Button, Image} from '@chakra-ui/core';
 import "../stylesheets/leftMenu.css";
+import ContentCard from "./contentCard";
+import { Route, Link } from 'react-router-dom';
 
-export default class LeftMenu extends React.Component {
-    render() {
-        return (
-            <ThemeProvider>
-                <CSSReset />
+
+export default function LeftMenu () {
+    // render() {
+
+    return (
+
+                <ThemeProvider>
+                    <CSSReset />
 
                 <Box
                     // width={["100%", "40%", "20%"]}
@@ -25,48 +30,59 @@ export default class LeftMenu extends React.Component {
                             </div>
                         </Box>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="63px">
+                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/dashboard-icon-18-256.png"></Image>
                                 </Box>
-                                &nbsp;&nbsp; Dashboard
+                                <Link to="/dashboard">
+                                    &nbsp;&nbsp; Dashboard
+                                </Link>
                             </div>
                         </Button>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="63px">
+                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/channel-mosaic-icon-18-64.png"></Image>
                                 </Box>
-                                &nbsp;&nbsp; Channels
+                                <Link to="/channels">
+                                    &nbsp;&nbsp; Channels
+                                </Link>
                             </div>
                         </Button>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="63px">
+                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/today-icon-18-64.png"></Image>
                                 </Box>
-                                &nbsp;&nbsp; Content
+                                <Link to="/contentCard">
+                                    &nbsp;&nbsp; Content
+                                </Link>
                             </div>
                         </Button>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="63px">
+                        <Button _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/contacts-2-icon-18-64.png"></Image>
                                 </Box>
-                                &nbsp;&nbsp; Subscriptions
+                                <Link to="/subscriptions">
+                                    &nbsp;&nbsp; Subscriptions
+                                </Link>
                             </div>
                         </Button>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="63px">
+
+                        <Button _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://www.iconsdb.com/icons/preview/white/statistics-xxl.png"></Image>
                                 </Box>
-                                &nbsp;&nbsp; Statistics
+                                <Link to="/statistics">
+                                    &nbsp;&nbsp; Statistics
+                                </Link>
                             </div>
                         </Button>
 
@@ -77,8 +93,9 @@ export default class LeftMenu extends React.Component {
 
                     <Box h={500}/>
                 </Box>
-            </ThemeProvider>
+
+                </ThemeProvider>
 
         );
-    }
+    // }
 }

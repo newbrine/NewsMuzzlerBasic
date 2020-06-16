@@ -4,6 +4,7 @@ import "../stylesheets/channelsMain.css";
 import TopNav from "./topNavBar";
 import LeftMenu from "./leftMenu";
 
+
 function EmailData(props) {
 
     const [show1, setShow1] = React.useState(false);
@@ -13,6 +14,10 @@ function EmailData(props) {
     const [show2, setShow2] = React.useState(false);
 
     const handleToggle2 = () => setShow2(!show2);
+
+    const [show3, setShow3] = React.useState(false);
+
+    const handleToggle3 = () => setShow3(!show3);
 
     const [createEmail, setCreate] = React.useState(false);
 
@@ -28,6 +33,11 @@ function EmailData(props) {
             categoryDescrip: "Email for newsletters related to my job in marketing. Want to stay updated on the " +
                 "latest and most relevant news in the market.", totalSubscrip: "8", businessSubscrip:"4",
             eventsSubscrip:"4", socialSubscrip:"5", handleToggle: handleToggle2, show: show2},
+
+        {id:3, emailTitle: "Other email", subscribeEmail: "cal980@newsmuzzler.com", forwardEmail: "iosifweir@gmail.com",
+            categoryDescrip: "Email for newsletters related to my job in marketing. Want to stay updated on the " +
+                "latest and most relevant news in the market.", totalSubscrip: "8", businessSubscrip:"4",
+            eventsSubscrip:"4", socialSubscrip:"6", handleToggle: handleToggle3, show: show3},
     ];
         const stackBoxes = contents.map((content) =>
 
@@ -58,16 +68,16 @@ function EmailData(props) {
                 <Box className={"channelsMain-col-5"}>
                     <Flex className={"channelsMain-col-10"} flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
                         <Box className={"channelsMain-header channelsMain-col-4"}>
-                            &emsp;Categories:
+                            &nbsp;Categories:
                         </Box>
                         <Box>
-                            <Button mr="15px" size= "xs" backgroundColor="#6E61BF" className={"channelsMain-Btn channelsMain-xsBtnTxt"}>Business √</Button>
+                            <Button mr="15px" size= "xs" backgroundColor="#6E61BF" _hover={{ bg: "#F2F2F2", color: "#595959" }} className={"channelsMain-Btn channelsMain-xsBtnTxt"}>Business √</Button>
                         </Box>
                         <Box>
-                            <Button mr="15px" size= "xs" backgroundColor="#6E61BF" className={"channelsMain-Btn channelsMain-xsBtnTxt"}>Events √</Button>
+                            <Button mr="15px" size= "xs" backgroundColor="#6E61BF" _hover={{ bg: "#F2F2F2", color: "#595959" }} className={"channelsMain-Btn channelsMain-xsBtnTxt"}>Events √</Button>
                         </Box>
                         <Box>
-                            <Button mr="15px" size= "xs" backgroundColor="#6E61BF" className={"channelsMain-Btn channelsMain-xsBtnTxt"}>Social √</Button>
+                            <Button mr="15px" size= "xs" backgroundColor="#6E61BF" _hover={{ bg: "#F2F2F2", color: "#595959" }} className={"channelsMain-Btn channelsMain-xsBtnTxt"}>Social √</Button>
                         </Box>
                     </Flex>
                     <Collapse mt={4} isOpen={content.show} >
@@ -131,18 +141,18 @@ function EmailData(props) {
 
         return(
             <ThemeProvider>
-                <SimpleGrid columns={2} gridTemplateColumns={'17% 83%'}>
-                    {/*Left Part*/}
-                    <Box backgroundColor={'#2b2737'} >
-                        <LeftMenu />
-                    </Box>
+                {/*<SimpleGrid columns={2} gridTemplateColumns={'17% 83%'}>*/}
+                {/*    /!*Left Part*!/*/}
+                {/*    <Box backgroundColor={'#2b2737'} >*/}
+                {/*        <LeftMenu />*/}
+                {/*    </Box>*/}
 
                     {/*Right Part*/}
                     <Box backgroundColor={'#F2F2F2'}>
-                        <TopNav />
+                        {/*<TopNav />*/}
                         <Box paddingLeft="20px">
                             <Box paddingTop="40px" paddingBottom="40px">
-                                <Button height="40px" backgroundColor="#6E61BF" className={"channelsMain-Btn channelsMain-lgBtnTxt"} onClick={createToggle}>
+                                <Button height="40px" backgroundColor="#6E61BF" _hover={{ bg: "#F2F2F2", color: "#595959" }} className={"channelsMain-Btn channelsMain-lgBtnTxt"} onClick={createToggle}>
                                     + Create new email
                                 </Button>
                             </Box>
@@ -190,20 +200,20 @@ function EmailData(props) {
                                                     </Box>
                                                     <Flex pl="15px" pt="15px" Direction={'row'} justifyContent={'flex-start'} alignItems={'center'}>
                                                         <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Business √</Button>
+                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Business √</Button>
                                                         </Box>
                                                         <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Events √</Button>
+                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Events √</Button>
                                                         </Box>
                                                         <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Social √</Button>
+                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Social √</Button>
                                                         </Box>
                                                         <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Tech √</Button>
+                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Tech √</Button>
                                                         </Box>
                                                     </Flex>
-                                                    <Box pl="15px" pt="15px" pb="15px">
-                                                        <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Travel √</Button>
+                                                    <Box pl="15px" pt="15px" pb="30px">
+                                                        <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Travel √</Button>
                                                     </Box>
                                                 </Box>
                                             </Stack>
@@ -215,7 +225,7 @@ function EmailData(props) {
                                                  Description (Optional)
                                             </Box>
 
-                                            <Textarea matInput placeholder="real email" rows="15" cols="15" />
+                                            <Textarea style={{height: 200}} matInput placeholder="real email" rows="15" cols="15" />
 
                                         </Box>
 
@@ -227,7 +237,7 @@ function EmailData(props) {
                             </Stack>
                         </Box>
                     </Box>
-                </SimpleGrid>
+                {/*</SimpleGrid>*/}
             </ThemeProvider>
         );
     }
@@ -248,9 +258,7 @@ function EmailData(props) {
     export default class ChannelsMain extends React.Component {
         render() {
             return (
-
-               <EmailData  />
-
+                <EmailData  />
             );
             // document.getElementById('root')
         }
