@@ -37,7 +37,7 @@ export default class ContentDetail extends React.Component {
                 <Stack
                     textAlign={'left'}
                     overflow="hidden"
-                    margin={'2% 2% 2% 2%'}
+                    margin={'-2% 9% 2% 4%'}
                     height={'100%'}
                 >
                     <Heading as={'h3'} fontSize={'20px'} letterSpacing={'1px'} color={'#000000'}>
@@ -69,13 +69,13 @@ export default class ContentDetail extends React.Component {
                                 <PopoverContent zIndex={4}>
                                     {/*<PopoverArrow />*/}
                                     <PopoverCloseButton />
-                                    <PopoverHeader>Save As</PopoverHeader>
+                                    <PopoverHeader>Save To the path &nbsp;&nbsp;&nbsp;&nbsp;</PopoverHeader>
                                     <PopoverBody>34545</PopoverBody>
                                 </PopoverContent>
                             </Popover>
                             </Box>
 
-                            <Box>
+                            <Box >
                                 <Icon className={'contentDetail-Icon'} name={'copy'} />
                             </Box>
 

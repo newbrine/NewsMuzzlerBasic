@@ -2,13 +2,13 @@ import React from "react";
 import {Box, Image, ThemeProvider, Flex} from "@chakra-ui/core";
 
 
-const horizontalContentCardProps = {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "card image",
-    title: "Popular destinations",
-    subtitle: "Robert Walsh",
-    publishedDate: "May 22, 2020",
-};
+// const horizontalContentCardProps = {
+//     imageUrl: "https://bit.ly/2Z4KKcF",
+//     imageAlt: "card image",
+//     title: "Popular destinations",
+//     subtitle: "Robert Walsh",
+//     publishedDate: "May 22, 2020",
+// };
 
 export default class RecommendContentCard extends React.Component {
     render() {
@@ -20,12 +20,14 @@ export default class RecommendContentCard extends React.Component {
                     rounded="lg"
                     overflow="hidden"
                     background={'#FFFFFF'}
-                    boxShadow={'0px 1px 4px rgba(0, 0, 0, 0.16), 0px 0px 2px rgba(0, 0, 0, 0.08)'}
+                    boxShadow={'0px 1px 4px rgba(0, 0, 0, 0.16), 0px 0px 2px rgba(0, 0, 0, 0.08), 0px 0px 0px #D1D6DB'}
                     borderRadius={'2px'}
+                    borderWidth={'0'}
                     margin={'0% 4% 2% 0%'}
                     height={'150px'}
+                    padding={'0'}
                 >
-                    <Image src={horizontalContentCardProps.imageUrl} alt={horizontalContentCardProps.imageAlt} width={111} height={150} />
+                    <Image src={this.props.imageUrl} alt={this.props.imageAlt} width={111} height={150} />
 
                     <Box padding="2" pl={'4'}>
                         <Box
@@ -37,7 +39,7 @@ export default class RecommendContentCard extends React.Component {
                             // isTruncated
                             letterSpacing={'1px'}
                         >
-                            {horizontalContentCardProps.title}
+                            {this.props.title}
                         </Box>
 
                         <Box display="flex" alignItems="baseline" marginTop={'10%'}>
@@ -49,13 +51,13 @@ export default class RecommendContentCard extends React.Component {
                                 lineHeight={'24px'}
                                 textTransform="uppercase"
                             >
-                                {horizontalContentCardProps.subtitle}
+                                {this.props.subtitle}
                             </Box>
                         </Box>
 
                         <Box>
                             <Box as="span" color={'#8C8C8C'} fontSize="sm">
-                                {horizontalContentCardProps.publishedDate}
+                                {this.props.publishedDate}
                             </Box>
                         </Box>
 
