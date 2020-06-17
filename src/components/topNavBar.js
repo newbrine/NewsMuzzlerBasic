@@ -14,8 +14,9 @@ const navProps = {
 export default class TopNavBar extends React.Component{
 
     openLeftMenu = () => {
-        document.getElementById("leftMenu").style.display = "block";
-        document.getElementById("mainPage").style.width = "100%";
+        // document.getElementById("leftMenu").style.display = "block";
+        document.getElementById("leftMenu").style.width = "17%";
+        document.getElementById("mainPage").style.width = "83%";
     }
 
     render() {

@@ -6,11 +6,12 @@ import {
     Heading,
     Icon,
     Image,
-    Popover,  PopoverBody, PopoverCloseButton,
+    Popover, PopoverArrow, PopoverBody, PopoverCloseButton,
     PopoverContent, PopoverHeader,
     PopoverTrigger,
     Stack,
-    ThemeProvider
+    ThemeProvider,
+    Button
 } from "@chakra-ui/core";
 import { AiOutlineSave, AiFillFacebook, AiFillLinkedin, AiFillTwitterSquare} from "react-icons/ai";
 import "../stylesheets/contentDetailPage.css";
@@ -30,6 +31,19 @@ const contentDetailProps = {
 };
 
 export default class ContentDetail extends React.Component {
+
+    downloadTxtFile = () => {
+        const element = document.createElement("a");
+        const file = new Blob([
+            "Title: " + contentDetailProps.title +"\n\n"+
+            "Subtitle: " + contentDetailProps.subtitle +"\n\n"+
+            "Author: " + contentDetailProps.author +"\n\n\n"+
+            "Content: " + contentDetailProps.content1 +"\n"+ contentDetailProps.content2], {type: 'text/plain'});
+        element.href = URL.createObjectURL(file);
+        element.download = document.getElementById('myInput').value + ".txt";
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+    }
 
     render() {
         return (
@@ -60,35 +74,108 @@ export default class ContentDetail extends React.Component {
                             </Box>
                         </Box>
 
-                        <Flex>
+                        <Flex alignItems="center">
                             <Box>
-                            <Popover placement="bottom-start">
-                                <PopoverTrigger>
-                                    <Box className={'contentDetail-Icon'} as={AiOutlineSave} />
-                                </PopoverTrigger>
-                                <PopoverContent zIndex={4}>
-                                    {/*<PopoverArrow />*/}
-                                    <PopoverCloseButton />
-                                    <PopoverHeader>Save To the path &nbsp;&nbsp;&nbsp;&nbsp;</PopoverHeader>
-                                    <PopoverBody>34545</PopoverBody>
-                                </PopoverContent>
-                            </Popover>
+                                <Popover placement="bottom">
+                                    <PopoverTrigger>
+                                        <Box className={'contentDetail-IconBox'}>
+                                            <Box className={'contentDetail-Icon'} as={AiOutlineSave} />
+                                        </Box>
+                                    </PopoverTrigger>
+                                    <PopoverContent zIndex={4}>
+                                        <PopoverArrow />
+                                        <PopoverCloseButton />
+                                        <PopoverHeader className="PopoverHeader-custom">Save NewsLetter</PopoverHeader>
+                                        <PopoverBody>
+                                            <Stack width={"50%"} >
+                                                <input id="myInput" />
+                                                <Button onClick={this.downloadTxtFile} >Save</Button>
+                                            </Stack>
+
+                                        </PopoverBody>
+                                    </PopoverContent>
+                                </Popover>
                             </Box>
 
                             <Box >
-                                <Icon className={'contentDetail-Icon'} name={'copy'} />
+                                <Popover>
+                                    <PopoverTrigger>
+                                        <Box className={'contentDetail-IconBox'}>
+                                            <Icon className={'contentDetail-Icon'} name={'copy'} />
+                                        </Box>
+                                    </PopoverTrigger>
+                                    <PopoverContent zIndex={4}>
+                                        <PopoverArrow />
+                                        <PopoverCloseButton />
+                                        <PopoverBody>The content has been copied!</PopoverBody>
+                                    </PopoverContent>
+                                </Popover>
                             </Box>
 
                             <Box>
-                                <Icon className={'contentDetail-Icon'} name={'email'} />
+                                <Popover>
+                                    <PopoverTrigger>
+                                        <Box className={'contentDetail-IconBox'}>
+                                            <Icon className={'contentDetail-Icon'} name={'email'} />
+                                        </Box>
+                                    </PopoverTrigger>
+                                    <PopoverContent zIndex={4}>
+                                        <PopoverArrow />
+                                        <PopoverCloseButton />
+                                        <PopoverHeader>Email</PopoverHeader>
+                                        <PopoverBody>The content has been copied!</PopoverBody>
+                                    </PopoverContent>
+                                </Popover>
                             </Box>
 
                             <Box>
-                                <Box  className={'contentDetail-Icon'} as={AiFillFacebook} />
+                                <Popover>
+                                    <PopoverTrigger>
+                                        <Box className={'contentDetail-IconBox'}>
+                                            <Box className={'contentDetail-Icon'} as={AiFillFacebook} />
+                                        </Box>
+                                    </PopoverTrigger>
+                                    <PopoverContent zIndex={4}>
+                                        <PopoverArrow />
+                                        <PopoverCloseButton />
+                                        <PopoverHeader>Facebook</PopoverHeader>
+                                        <PopoverBody>The content has been copied!</PopoverBody>
+                                    </PopoverContent>
+                                </Popover>
                             </Box>
 
-                            <Box  className={'contentDetail-Icon'} as={AiFillLinkedin} />
-                            <Box  className={'contentDetail-Icon'} as={AiFillTwitterSquare} />
+                            <Box>
+                                <Popover>
+                                    <PopoverTrigger>
+                                        <Box className={'contentDetail-IconBox'}>
+                                            <Box className={'contentDetail-Icon'} as={AiFillLinkedin} />
+                                        </Box>
+                                    </PopoverTrigger>
+                                    <PopoverContent zIndex={4}>
+                                        <PopoverArrow />
+                                        <PopoverCloseButton />
+                                        <PopoverHeader>Facebook</PopoverHeader>
+                                        <PopoverBody>The content has been copied!</PopoverBody>
+                                    </PopoverContent>
+                                </Popover>
+                            </Box>
+
+                            <Box>
+                                <Popover>
+                                    <PopoverTrigger>
+                                        <Box className={'contentDetail-IconBox'}>
+                                            <Box className={'contentDetail-Icon'} as={AiFillTwitterSquare} />
+                                        </Box>
+                                    </PopoverTrigger>
+                                    <PopoverContent zIndex={4}>
+                                        <PopoverArrow />
+                                        <PopoverCloseButton />
+                                        <PopoverHeader>Facebook</PopoverHeader>
+                                        <PopoverBody>The content has been copied!</PopoverBody>
+                                    </PopoverContent>
+                                </Popover>
+                            </Box>
+
                         </Flex>
                     </Flex>
 

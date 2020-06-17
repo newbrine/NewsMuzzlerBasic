@@ -1,5 +1,7 @@
 import React from "react";
-import {Box, Image, ThemeProvider, Flex} from "@chakra-ui/core";
+import {Box, ThemeProvider, Flex} from "@chakra-ui/core";
+
+import LazyLoad from 'react-lazyload';
 
 // const horizontalContentCardProps = {
 //     imageUrl: "https://bit.ly/2Z4KKcF",
@@ -14,16 +16,15 @@ import {Box, Image, ThemeProvider, Flex} from "@chakra-ui/core";
 export default class HorizontalContentCard extends React.Component {
 
     closeLeftMenu = () => {
-        // document.getElementById("MainPage-SimpleGrid").style.columns = "100% 1";
-        // document.getElementById("leftMenu").style.width = "0";
-        document.getElementById("leftMenu").style.display = "none";
-        // document.getElementById("mainPage").style.marginLeft = "0";
-        document.getElementById("mainPage").style.width = "1700px";
+        document.getElementById("leftMenu").style.width = "0";
+        document.getElementById("mainPage").style.width = "100%";
+        document.getElementsByClassName("leftMenu-btnTxt").style.display = "none";
     }
 
     render() {
         return (
             <ThemeProvider>
+                {/*<LazyLoad height={'160px'}>*/}
                 <Flex
                     as={'button'}
                     textAlign={'left'}
@@ -35,12 +36,14 @@ export default class HorizontalContentCard extends React.Component {
                     margin={'0% 2% 2% 2%'}
                     // height={'150px'}
                     height={'160px'}
-
+                    width="96%"
                     onClick={this.closeLeftMenu}
                 >
-                    <Image src={this.props.imageUrl} alt={this.props.imageAlt} width={260} height={160} />
+                    <LazyLoad>
+                        <img src={this.props.imageUrl} alt={this.props.imageAlt} style={{width:'260px', height:'160px'}}/>
+                    </LazyLoad>
 
-                    <Box padding="2" pl={'4'}>
+                    <Box padding="2" paddingLeft={'4'} width="70%">
                         <Box
                             color={'#000000'}
                             marginTop="0"
@@ -79,6 +82,7 @@ export default class HorizontalContentCard extends React.Component {
                         </Box>
                     </Box>
                 </Flex>
+                {/*</LazyLoad>*/}
             </ThemeProvider>
         );
     }
