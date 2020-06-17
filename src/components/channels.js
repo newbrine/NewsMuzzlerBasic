@@ -130,105 +130,103 @@ function EmailData(props) {
             );
 
         return(
-            <ThemeProvider>
-                <SimpleGrid columns={2} gridTemplateColumns={'17% 83%'}>
-                    {/*Left Part*/}
-                    <Box backgroundColor={'#2b2737'} >
-                        <LeftMenu />
-                    </Box>
+            <SimpleGrid columns={2} gridTemplateColumns={'17% 83%'}>
+                {/*Left Part*/}
+                <Box backgroundColor={'#2b2737'} >
+                    <LeftMenu />
+                </Box>
 
-                    {/*Right Part*/}
-                    <Box backgroundColor={'#F2F2F2'}>
-                        <TopNav />
-                        <Box paddingLeft="20px">
-                            <Box paddingTop="40px" paddingBottom="40px">
-                                <Button height="40px" backgroundColor="#6E61BF" className={"channelsMain-Btn channelsMain-lgBtnTxt"} onClick={createToggle}>
-                                    + Create new email
-                                </Button>
-                            </Box>
-                            <Stack paddingRight = "60px" spacing={2} >
+                {/*Right Part*/}
+                <Box backgroundColor={'#F2F2F2'}>
+                    <TopNav />
+                    <Box paddingLeft="20px">
+                        <Box paddingTop="40px" paddingBottom="40px">
+                            <Button height="40px" backgroundColor="#6E61BF" className={"channelsMain-Btn channelsMain-lgBtnTxt"} onClick={createToggle}>
+                                + Create new email
+                            </Button>
+                        </Box>
+                        <Stack paddingRight = "60px" spacing={2} >
 
-                                <Collapse isOpen={createEmail}>
-                                    <Box border="1px solid rgba(168, 166, 185, 0.5)" borderRadius="6px" background="#F5F5F5" className={"channelsMain-row"} pb="40px">
-                                        <Box pl= "0px" className={"channelsMain-col-4"}>
-                                            <Stack spacing={4} pr="20px">
-                                                <Box>
-                                                    <Box className={"channelsMain-subHeader"}>
-                                                        Email Label
-                                                    </Box>
-                                                    <Input borderRadius="5px" placeholder="email label" />
+                            <Collapse isOpen={createEmail}>
+                                <Box border="1px solid rgba(168, 166, 185, 0.5)" borderRadius="6px" background="#F5F5F5" className={"channelsMain-row"} pb="40px">
+                                    <Box pl= "0px" className={"channelsMain-col-4"}>
+                                        <Stack spacing={4} pr="20px">
+                                            <Box>
+                                                <Box className={"channelsMain-subHeader"}>
+                                                    Email Label
                                                 </Box>
-
-                                                <Box>
-                                                    <Box className={"channelsMain-subHeader"}>
-                                                        Subscribe Email
-                                                    </Box>
-                                                    <Input borderRadius="5px"  placeholder="real email" />
-                                                </Box>
-
-                                                <Box>
-                                                    <Box className={"channelsMain-subHeader"}>
-                                                        Forwarding Email
-                                                    </Box>
-                                                    <Input borderRadius="5px"  placeholder="er098p@newsmuzzler.com" />
-                                                </Box>
-                                            </Stack>
-
-                                        </Box>
-
-                                        <Box className={"channelsMain-col-4"}>
-                                            <Stack spacing={4} pl="20px">
-                                                <Box>
-                                                    <Box className={"channelsMain-subHeader"}>
-                                                        Select Category
-                                                    </Box>
-                                                    <Input borderRadius="5px"  placeholder="email label" />
-                                                </Box>
-                                                <Box stroke="Solid rgba(168, 166, 185, 0.5)" fill="Solid #FFFFFF" borderWidth="1px" borderRadius="5px" backgroundColor="#FFFFFF">
-                                                    <Box pl="15px" pt="15px">
-                                                        Existing Categories
-                                                    </Box>
-                                                    <Flex pl="15px" pt="15px" Direction={'row'} justifyContent={'flex-start'} alignItems={'center'}>
-                                                        <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Business √</Button>
-                                                        </Box>
-                                                        <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Events √</Button>
-                                                        </Box>
-                                                        <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Social √</Button>
-                                                        </Box>
-                                                        <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Tech √</Button>
-                                                        </Box>
-                                                    </Flex>
-                                                    <Box pl="15px" pt="15px" pb="15px">
-                                                        <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Travel √</Button>
-                                                    </Box>
-                                                </Box>
-                                            </Stack>
-
-                                        </Box>
-
-                                        <Box className={"channelsMain-col-3"} pl="40px" height="220px">
-                                            <Box className={"channelsMain-subHeader"}>
-                                                 Description (Optional)
+                                                <Input borderRadius="5px" placeholder="email label" />
                                             </Box>
 
-                                            <Textarea matInput placeholder="real email" rows="15" cols="15" />
+                                            <Box>
+                                                <Box className={"channelsMain-subHeader"}>
+                                                    Subscribe Email
+                                                </Box>
+                                                <Input borderRadius="5px"  placeholder="real email" />
+                                            </Box>
 
-                                        </Box>
+                                            <Box>
+                                                <Box className={"channelsMain-subHeader"}>
+                                                    Forwarding Email
+                                                </Box>
+                                                <Input borderRadius="5px"  placeholder="er098p@newsmuzzler.com" />
+                                            </Box>
+                                        </Stack>
 
                                     </Box>
-                                </Collapse>
+
+                                    <Box className={"channelsMain-col-4"}>
+                                        <Stack spacing={4} pl="20px">
+                                            <Box>
+                                                <Box className={"channelsMain-subHeader"}>
+                                                    Select Category
+                                                </Box>
+                                                <Input borderRadius="5px"  placeholder="email label" />
+                                            </Box>
+                                            <Box stroke="Solid rgba(168, 166, 185, 0.5)" fill="Solid #FFFFFF" borderWidth="1px" borderRadius="5px" backgroundColor="#FFFFFF">
+                                                <Box pl="15px" pt="15px">
+                                                    Existing Categories
+                                                </Box>
+                                                <Flex pl="15px" pt="15px" Direction={'row'} justifyContent={'flex-start'} alignItems={'center'}>
+                                                    <Box pr="20px">
+                                                        <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Business √</Button>
+                                                    </Box>
+                                                    <Box pr="20px">
+                                                        <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Events √</Button>
+                                                    </Box>
+                                                    <Box pr="20px">
+                                                        <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Social √</Button>
+                                                    </Box>
+                                                    <Box pr="20px">
+                                                        <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Tech √</Button>
+                                                    </Box>
+                                                </Flex>
+                                                <Box pl="15px" pt="15px" pb="15px">
+                                                    <Button size= "xs" backgroundColor="Solid #F2F2F2" className={"createEmail-btns"}>Travel √</Button>
+                                                </Box>
+                                            </Box>
+                                        </Stack>
+
+                                    </Box>
+
+                                    <Box className={"channelsMain-col-3"} pl="40px" height="220px">
+                                        <Box className={"channelsMain-subHeader"}>
+                                                Description (Optional)
+                                        </Box>
+
+                                        <Textarea matInput placeholder="real email" rows="15" cols="15" />
+
+                                    </Box>
+
+                                </Box>
+                            </Collapse>
 
 
-                                {stackBoxes}
-                            </Stack>
-                        </Box>
+                            {stackBoxes}
+                        </Stack>
                     </Box>
-                </SimpleGrid>
-            </ThemeProvider>
+                </Box>
+            </SimpleGrid>
         );
     }
 

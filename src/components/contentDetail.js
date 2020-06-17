@@ -33,96 +33,94 @@ export default class ContentDetail extends React.Component {
 
     render() {
         return (
-            <ThemeProvider>
-                <Stack
-                    textAlign={'left'}
-                    overflow="hidden"
-                    margin={'2% 2% 2% 2%'}
-                    height={'100%'}
-                >
-                    <Heading as={'h3'} fontSize={'20px'} letterSpacing={'1px'} color={'#000000'}>
-                        {contentDetailProps.title}
-                    </Heading>
+            <Stack
+                textAlign={'left'}
+                overflow="hidden"
+                margin={'2% 2% 2% 2%'}
+                height={'100%'}
+            >
+                <Heading as={'h3'} fontSize={'20px'} letterSpacing={'1px'} color={'#000000'}>
+                    {contentDetailProps.title}
+                </Heading>
 
-                    <Flex paddingTop={'1%'} paddingBottom={'1%'} height={'50px'} alignItems={'flex-start'} >
-                        <Avatar
-                            name={contentDetailProps.author}
-                            src={contentDetailProps.authorImageUrl}
-                            marginRight={'1%'}
-                        />
+                <Flex paddingTop={'1%'} paddingBottom={'1%'} height={'50px'} alignItems={'flex-start'} >
+                    <Avatar
+                        name={contentDetailProps.author}
+                        src={contentDetailProps.authorImageUrl}
+                        marginRight={'1%'}
+                    />
 
-                        <Box marginRight={'10%'} letterSpacing={'1px'}>
-                            <Box color={'#595959'} fontSize={'16px'} paddingBottom={'4%'}>
-                                {contentDetailProps.author}
-                            </Box>
-                            <Box as={'span'} color={'#8C8C8C'} fontSize="12px">
-                                {contentDetailProps.publishedDate} &bull; {contentDetailProps.timeToRead} minute read
-                            </Box>
+                    <Box marginRight={'10%'} letterSpacing={'1px'}>
+                        <Box color={'#595959'} fontSize={'16px'} paddingBottom={'4%'}>
+                            {contentDetailProps.author}
+                        </Box>
+                        <Box as={'span'} color={'#8C8C8C'} fontSize="12px">
+                            {contentDetailProps.publishedDate} &bull; {contentDetailProps.timeToRead} minute read
+                        </Box>
+                    </Box>
+
+                    <Flex>
+                        <Box>
+                        <Popover placement="bottom-start">
+                            <PopoverTrigger>
+                                <Box className={'contentDetail-Icon'} as={AiOutlineSave} />
+                            </PopoverTrigger>
+                            <PopoverContent zIndex={4}>
+                                {/*<PopoverArrow />*/}
+                                <PopoverCloseButton />
+                                <PopoverHeader>Save As</PopoverHeader>
+                                <PopoverBody>34545</PopoverBody>
+                            </PopoverContent>
+                        </Popover>
                         </Box>
 
-                        <Flex>
-                            <Box>
-                            <Popover placement="bottom-start">
-                                <PopoverTrigger>
-                                    <Box className={'contentDetail-Icon'} as={AiOutlineSave} />
-                                </PopoverTrigger>
-                                <PopoverContent zIndex={4}>
-                                    {/*<PopoverArrow />*/}
-                                    <PopoverCloseButton />
-                                    <PopoverHeader>Save As</PopoverHeader>
-                                    <PopoverBody>34545</PopoverBody>
-                                </PopoverContent>
-                            </Popover>
-                            </Box>
+                        <Box>
+                            <Icon className={'contentDetail-Icon'} name={'copy'} />
+                        </Box>
 
-                            <Box>
-                                <Icon className={'contentDetail-Icon'} name={'copy'} />
-                            </Box>
+                        <Box>
+                            <Icon className={'contentDetail-Icon'} name={'email'} />
+                        </Box>
 
-                            <Box>
-                                <Icon className={'contentDetail-Icon'} name={'email'} />
-                            </Box>
+                        <Box>
+                            <Box  className={'contentDetail-Icon'} as={AiFillFacebook} />
+                        </Box>
 
-                            <Box>
-                                <Box  className={'contentDetail-Icon'} as={AiFillFacebook} />
-                            </Box>
-
-                            <Box  className={'contentDetail-Icon'} as={AiFillLinkedin} />
-                            <Box  className={'contentDetail-Icon'} as={AiFillTwitterSquare} />
-                        </Flex>
+                        <Box  className={'contentDetail-Icon'} as={AiFillLinkedin} />
+                        <Box  className={'contentDetail-Icon'} as={AiFillTwitterSquare} />
                     </Flex>
+                </Flex>
 
-                    <Stack className={"contentDetail-Body"} spacing={4}>
-                        <Box>
-                            {contentDetailProps.content1}
-                        </Box>
+                <Stack className={"contentDetail-Body"} spacing={4}>
+                    <Box>
+                        {contentDetailProps.content1}
+                    </Box>
 
-                        <Box>
-                            {contentDetailProps.content1}
-                        </Box>
+                    <Box>
+                        {contentDetailProps.content1}
+                    </Box>
 
-                        <Image
-                            src={contentDetailProps.imageUrl}
-                            alt={contentDetailProps.imageAlt}
-                            width={'644px'}
-                            height={'300px'}
-                        />
+                    <Image
+                        src={contentDetailProps.imageUrl}
+                        alt={contentDetailProps.imageAlt}
+                        width={'644px'}
+                        height={'300px'}
+                    />
 
-                        <Box>
-                            {contentDetailProps.content2}
-                        </Box>
+                    <Box>
+                        {contentDetailProps.content2}
+                    </Box>
 
-                        <Box>
-                            {contentDetailProps.content2}
-                        </Box>
+                    <Box>
+                        {contentDetailProps.content2}
+                    </Box>
 
-                        <Box>
-                            {contentDetailProps.content2}
-                        </Box>
-                    </Stack>
-
+                    <Box>
+                        {contentDetailProps.content2}
+                    </Box>
                 </Stack>
-            </ThemeProvider>
+
+            </Stack>
         );
     }
 }
