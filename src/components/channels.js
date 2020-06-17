@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useReducer} from "react";
-import { Box, Stack, Flex, Button, ThemeProvider, Collapse, Image, Input, Textarea} from '@chakra-ui/core';
+import React from "react";
+import { Box, Stack, Flex, Button, ThemeProvider, Collapse, Image, Input, Textarea} from "@chakra-ui/core";
 import "../stylesheets/channelsMain.css";
 
-function EmailData(props) {
+function EmailData() {
 
     const [show1, setShow1] = React.useState(false);
     const handleToggle1 = () => setShow1(!show1);
@@ -24,15 +24,13 @@ function EmailData(props) {
         {id:5, buttonName: "Travel", buttonState: false}
     ];
     const [buttonStatus, setStatus] = React.useState(buttons);
-    const updateStatus = index => e => {
-
+    const updateStatus = index => {
         let newArr = [...buttonStatus]; // copying the old datas array
         newArr[index] = {id:index, buttonName: newArr[index].buttonName, buttonState: !newArr[index].buttonState};// replace new value with whatever we want to change it to
         setStatus(newArr);
-
     };
     const buttonsToggle = buttonStatus.map((button, index) =>(
-        <Box pr="20px">
+        <Box key={button.id} pr="20px">
             <Button key={button.id} size= "xs" onClick={updateStatus(index)} backgroundColor={button.buttonState? "#6E61BF": "Solid #F2F2F2"} _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={button.buttonState? "channelsMain-Btn channelsMain-xsBtnTxt": "createEmail-btns"}>{button.buttonName} √</Button>
         </Box>)
     );
@@ -81,7 +79,7 @@ function EmailData(props) {
                 </Box>
 
                 <Box className={"channelsMain-col-5"}>
-                    <Flex className={"channelsMain-col-10"} flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
+                    <Flex className={"channelsMain-col-10"} flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
                         <Box className={"channelsMain-header channelsMain-col-4"}>
                             &emsp;Categories:
                         </Box>
@@ -103,7 +101,7 @@ function EmailData(props) {
 
                 </Box>
                 <Box className={"channelsMain-col-4"}>
-                    <Flex className={"channelsMain-col-6"} flexDirection={'row'} justifyContent={'start'} alignItems={'center'}>
+                    <Flex className={"channelsMain-col-6"} flexDirection={"row"} justifyContent={"start"} alignItems={"center"}>
                         <Box pl="6px" className={"channelsMain-header"}>
                             Total Subscriptions:&nbsp;
                         </Box>
@@ -113,7 +111,7 @@ function EmailData(props) {
                     </Flex>
 
                     <Collapse mt={4} isOpen={content.show} >
-                        <Flex className={"channelsMain-col-7"} flexDirection={'row'} justifyContent={'start'} alignItems={'center'}>
+                        <Flex className={"channelsMain-col-7"} flexDirection={"row"} justifyContent={"start"} alignItems={"center"}>
                             <Box pl="8px" className={"channelsMain-subHeader"}>
                                 Business Subscriptions:&nbsp;
                             </Box>
@@ -121,7 +119,7 @@ function EmailData(props) {
                                 {content.businessSubscrip}
                             </Box>
                         </Flex>
-                        <Flex pl="8px" className={"channelsMain-col-7"} flexDirection={'row'} justifyContent={'start'} alignItems={'center'}>
+                        <Flex pl="8px" className={"channelsMain-col-7"} flexDirection={"row"} justifyContent={"start"} alignItems={"center"}>
                             <Box className={"channelsMain-subHeader"}>
                                 Events Subscriptions:&nbsp;
                             </Box>
@@ -129,7 +127,7 @@ function EmailData(props) {
                                 {content.eventsSubscrip}
                             </Box>
                         </Flex>
-                        <Flex pl="8px" className={"channelsMain-col-7"} flexDirection={'row'} justifyContent={'start'} alignItems={'center'}>
+                        <Flex pl="8px" className={"channelsMain-col-7"} flexDirection={"row"} justifyContent={"start"} alignItems={"center"}>
                             <Box  className={"channelsMain-subHeader"}>
                                 Social Subscriptions:&nbsp;
                             </Box>
@@ -157,8 +155,7 @@ function EmailData(props) {
         return(
             <ThemeProvider>
 
-                    <Box backgroundColor={'#F2F2F2'}>
-                        {/*<TopNav />*/}
+                    <Box backgroundColor={"#F2F2F2"}>
                         <Box paddingLeft="20px">
                             <Box paddingTop="40px" paddingBottom="40px">
                                 <Button height="40px" backgroundColor="#6E61BF" _hover={{ bg: "#F2F2F2", color: "#595959" }} className={"channelsMain-Btn channelsMain-lgBtnTxt"} onClick={createToggle}>
@@ -203,14 +200,15 @@ function EmailData(props) {
                                                 </Box>
                                                 <Box background="#FFFFFF" borderRadius="5px">
                                                     <Box pl="15px" pt="10px" pb="10px" className={"createEmail-placeHolder"}>
-                                                        <Collapse>
+                                                        <Collapse isOpen={!buttonStatus[0].buttonState & !buttonStatus[1].buttonState & !buttonStatus[2].buttonState & !buttonStatus[3].buttonState & !buttonStatus[4].buttonState}>
                                                             select category
                                                         </Collapse>
                                                         <Stack isInline>
-                                                            {buttonStatus.map(button => <Collapse isOpen={button.buttonState}>
-                                                                    <Button size="xs" backgroundColor="#6E61BF"
+                                                            {buttonStatus.map(button =>
+                                                                <Collapse key={button.id} isOpen={button.buttonState}>
+                                                                    <Button key={button.id} size="xs" backgroundColor="#6E61BF"
                                                                             className={"channelsMain-Btn channelsMain-xsBtnTxt"}>{button.buttonName} √</Button>
-                                                                                        </Collapse>)
+                                                                </Collapse>)
                                                             }
                                                         </Stack>
                                                     </Box>
@@ -220,7 +218,7 @@ function EmailData(props) {
                                                     <Box pl="15px" pt="15px">
                                                         Existing Categories
                                                     </Box>
-                                                    <Flex pl="15px" pt="15px" pb = "15px" Direction={'row'} justifyContent={'flex-start'} alignItems={'center'}>
+                                                    <Flex pl="15px" pt="15px" pb = "15px" Direction={"row"} justifyContent={"flex-start"} alignItems={"center"}>
                                                         {buttonsToggle}
                                                     </Flex>
 

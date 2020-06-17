@@ -46,6 +46,8 @@
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addons": "^5.3.19",
     "@storybook/preset-create-react-app": "^3.0.0",
-    "@storybook/react": "^5.3.19"
+    "@storybook/react": "^5.3.19",
+    "eslint": "^7.2.0",
+    "eslint-plugin-react": "^7.20.0"
   }
 }
