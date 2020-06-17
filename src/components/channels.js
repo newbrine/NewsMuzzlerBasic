@@ -1,27 +1,41 @@
-import React from "react";
-import { Box, Stack, Flex, Button, ThemeProvider, SimpleGrid, Collapse, Image, Input, Textarea} from '@chakra-ui/core';
+import React, {useState, useEffect, useReducer} from "react";
+import { Box, Stack, Flex, Button, ThemeProvider, Collapse, Image, Input, Textarea} from '@chakra-ui/core';
 import "../stylesheets/channelsMain.css";
-import TopNav from "./topNavBar";
-import LeftMenu from "./leftMenu";
-
 
 function EmailData(props) {
 
     const [show1, setShow1] = React.useState(false);
-
     const handleToggle1 = () => setShow1(!show1);
 
     const [show2, setShow2] = React.useState(false);
-
     const handleToggle2 = () => setShow2(!show2);
 
     const [show3, setShow3] = React.useState(false);
-
     const handleToggle3 = () => setShow3(!show3);
 
     const [createEmail, setCreate] = React.useState(false);
-
     const createToggle = () => setCreate(!createEmail);
+
+    const buttons = [
+        {id:1, buttonName: "Business", buttonState: false},
+        {id:2, buttonName: "Events", buttonState: false},
+        {id:3, buttonName: "Social", buttonState: false},
+        {id:4, buttonName: "Tech", buttonState: false},
+        {id:5, buttonName: "Travel", buttonState: false}
+    ];
+    const [buttonStatus, setStatus] = React.useState(buttons);
+    const updateStatus = index => e => {
+
+        let newArr = [...buttonStatus]; // copying the old datas array
+        newArr[index] = {id:index, buttonName: newArr[index].buttonName, buttonState: !newArr[index].buttonState};// replace new value with whatever we want to change it to
+        setStatus(newArr);
+
+    };
+    const buttonsToggle = buttonStatus.map((button, index) =>(
+        <Box pr="20px">
+            <Button key={button.id} size= "xs" onClick={updateStatus(index)} backgroundColor={button.buttonState? "#6E61BF": "Solid #F2F2F2"} _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={button.buttonState? "channelsMain-Btn channelsMain-xsBtnTxt": "createEmail-btns"}>{button.buttonName} √</Button>
+        </Box>)
+    );
 
     const contents = [
         {id:1, emailTitle: "Work email", subscribeEmail: "cal980@newsmuzzler.com", forwardEmail: "iosifweir@gmail.com",
@@ -39,9 +53,10 @@ function EmailData(props) {
                 "latest and most relevant news in the market.", totalSubscrip: "8", businessSubscrip:"4",
             eventsSubscrip:"4", socialSubscrip:"6", handleToggle: handleToggle3, show: show3},
     ];
+
         const stackBoxes = contents.map((content) =>
 
-            <Box key={content.id} position="relative" d="flex" border="1px solid rgba(168, 166, 185, 0.5)" borderRadius="6px" background="#E8E8E8"  className={"channelsMain-row"}>
+            <Box key={content.id} position="relative" d="flex" border="1px solid rgba(168, 166, 185, 0.5)" borderRadius="6px" background="#E8E8E8" className={"channelsMain-row"}>
                 <Box className={"channelsMain-col-3"}>
                     <Box pt={content.show? "35px": "7px"} className={"channelsMain-header"}>
                         {content.emailTitle}
@@ -68,7 +83,7 @@ function EmailData(props) {
                 <Box className={"channelsMain-col-5"}>
                     <Flex className={"channelsMain-col-10"} flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
                         <Box className={"channelsMain-header channelsMain-col-4"}>
-                            &nbsp;Categories:
+                            &emsp;Categories:
                         </Box>
                         <Box>
                             <Button mr="15px" size= "xs" backgroundColor="#6E61BF" _hover={{ bg: "#F2F2F2", color: "#595959" }} className={"channelsMain-Btn channelsMain-xsBtnTxt"}>Business √</Button>
@@ -141,13 +156,7 @@ function EmailData(props) {
 
         return(
             <ThemeProvider>
-                {/*<SimpleGrid columns={2} gridTemplateColumns={'17% 83%'}>*/}
-                {/*    /!*Left Part*!/*/}
-                {/*    <Box backgroundColor={'#2b2737'} >*/}
-                {/*        <LeftMenu />*/}
-                {/*    </Box>*/}
 
-                    {/*Right Part*/}
                     <Box backgroundColor={'#F2F2F2'}>
                         {/*<TopNav />*/}
                         <Box paddingLeft="20px">
@@ -166,7 +175,8 @@ function EmailData(props) {
                                                     <Box className={"channelsMain-subHeader"}>
                                                         Email Label
                                                     </Box>
-                                                    <Input borderRadius="5px" placeholder="email label" />
+
+                                                    <Input borderRadius="5px"  placeholder="email label" />
                                                 </Box>
 
                                                 <Box>
@@ -186,41 +196,40 @@ function EmailData(props) {
 
                                         </Box>
 
-                                        <Box className={"channelsMain-col-4"}>
-                                            <Stack spacing={4} pl="20px">
-                                                <Box>
-                                                    <Box className={"channelsMain-subHeader"}>
-                                                        Select Category
-                                                    </Box>
-                                                    <Input borderRadius="5px"  placeholder="email label" />
+                                        <Box className={"channelsMain-col-5"}>
+                                            <Stack spacing={4} pl="15px">
+                                                <Box className={"channelsMain-subHeader"}>
+                                                    Select Category
                                                 </Box>
+                                                <Box background="#FFFFFF" borderRadius="5px">
+                                                    <Box pl="15px" pt="10px" pb="10px" className={"createEmail-placeHolder"}>
+                                                        <Collapse>
+                                                            select category
+                                                        </Collapse>
+                                                        <Stack isInline>
+                                                            {buttonStatus.map(button => <Collapse isOpen={button.buttonState}>
+                                                                    <Button size="xs" backgroundColor="#6E61BF"
+                                                                            className={"channelsMain-Btn channelsMain-xsBtnTxt"}>{button.buttonName} √</Button>
+                                                                                        </Collapse>)
+                                                            }
+                                                        </Stack>
+                                                    </Box>
+                                                </Box>
+
                                                 <Box stroke="Solid rgba(168, 166, 185, 0.5)" fill="Solid #FFFFFF" borderWidth="1px" borderRadius="5px" backgroundColor="#FFFFFF">
                                                     <Box pl="15px" pt="15px">
                                                         Existing Categories
                                                     </Box>
-                                                    <Flex pl="15px" pt="15px" Direction={'row'} justifyContent={'flex-start'} alignItems={'center'}>
-                                                        <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Business √</Button>
-                                                        </Box>
-                                                        <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Events √</Button>
-                                                        </Box>
-                                                        <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Social √</Button>
-                                                        </Box>
-                                                        <Box pr="20px">
-                                                            <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Tech √</Button>
-                                                        </Box>
+                                                    <Flex pl="15px" pt="15px" pb = "15px" Direction={'row'} justifyContent={'flex-start'} alignItems={'center'}>
+                                                        {buttonsToggle}
                                                     </Flex>
-                                                    <Box pl="15px" pt="15px" pb="30px">
-                                                        <Button size= "xs" backgroundColor="Solid #F2F2F2" _hover={{ bg: "#6E61BF", color: "#FFFFFF" }} className={"createEmail-btns"}>Travel √</Button>
-                                                    </Box>
+
                                                 </Box>
                                             </Stack>
 
                                         </Box>
 
-                                        <Box className={"channelsMain-col-3"} pl="40px" height="220px">
+                                        <Box className={"channelsMain-col-3"} pl="50px" pr="50px" height="220px">
                                             <Box className={"channelsMain-subHeader"}>
                                                  Description (Optional)
                                             </Box>
@@ -232,35 +241,20 @@ function EmailData(props) {
                                     </Box>
                                 </Collapse>
 
-
                                 {stackBoxes}
+
                             </Stack>
                         </Box>
                     </Box>
-                {/*</SimpleGrid>*/}
             </ThemeProvider>
         );
     }
-
-    // function createEmail(props) {
-    //
-    //     return(
-    //         <Collapse>
-    //
-    //
-    //
-    //         </Collapse>
-    //     );
-    // }
-
-
 
     export default class ChannelsMain extends React.Component {
         render() {
             return (
                 <EmailData  />
             );
-            // document.getElementById('root')
         }
 }
   

@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import {ThemeProvider, CSSReset, Box, Stack, Button, Image} from '@chakra-ui/core';
 import "../stylesheets/leftMenu.css";
-import ContentCard from "./contentCard";
-import { Route, Link } from 'react-router-dom';
 
 
 export default function LeftMenu () {
-    // render() {
-
+    const initialState = (<Box> </Box>);
+    const reducer = (state, action) => {
+        switch(action.type) {
+            case 'dashboard':
+                return (<Box>This is the dashboard!</Box>);
+            case 'channels':
+                return (<Box>This is the channels!</Box>);
+            case 'content':
+                return (<Box>This is the content!</Box>);
+            case 'subscriptions':
+                return (<Box>This is the subscriptions!</Box>);
+            case 'statistics':
+                return (<Box>This is the statistics!</Box>);
+        }
+    }
+    const [state, dispatch1] = useReducer(reducer, initialState);
+    const routeToDashboard = () => dispatch1({ type: 'dashboard' });
     return (
-
-                <ThemeProvider>
-                    <CSSReset />
-
+        <ThemeProvider>
+            <CSSReset />
                 <Box
                     // width={["100%", "40%", "20%"]}
                     backgroundColor="#2B2737">
+                    <Box>
+                        {state}
+                    </Box>
 
                     <Stack spacing={0}>
 
@@ -30,59 +44,49 @@ export default function LeftMenu () {
                             </div>
                         </Box>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                        <Button onClick={routeToDashboard} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/dashboard-icon-18-256.png"></Image>
                                 </Box>
-                                <Link to="/dashboard">
                                     &nbsp;&nbsp; Dashboard
-                                </Link>
                             </div>
                         </Button>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                        <Button onClick={() => dispatch1({ type: 'channels' })} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/channel-mosaic-icon-18-64.png"></Image>
                                 </Box>
-                                <Link to="/channels">
                                     &nbsp;&nbsp; Channels
-                                </Link>
                             </div>
                         </Button>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                        <Button onClick={() => dispatch1({ type: 'content' })} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/today-icon-18-64.png"></Image>
                                 </Box>
-                                <Link to="/contentCard">
                                     &nbsp;&nbsp; Content
-                                </Link>
                             </div>
                         </Button>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                        <Button onClick={() => dispatch1({ type: 'subscriptions' })} _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/contacts-2-icon-18-64.png"></Image>
                                 </Box>
-                                <Link to="/subscriptions">
                                     &nbsp;&nbsp; Subscriptions
-                                </Link>
                             </div>
                         </Button>
 
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                        <Button onClick={() => dispatch1({ type: 'statistics' })} _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://www.iconsdb.com/icons/preview/white/statistics-xxl.png"></Image>
                                 </Box>
-                                <Link to="/statistics">
                                     &nbsp;&nbsp; Statistics
-                                </Link>
                             </div>
                         </Button>
 
@@ -90,12 +94,10 @@ export default function LeftMenu () {
 
                         </div>
                     </Stack>
-
                     <Box h={500}/>
                 </Box>
-
-                </ThemeProvider>
+        </ThemeProvider>
 
         );
-    // }
 }
+
