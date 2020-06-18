@@ -14,6 +14,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
+    "react-icons": "^3.10.0",
+    "react-lazyload": "^2.6.8",
     "react-scripts": "3.4.1",
     "storybook-react-router": "^1.0.8",
     "styled-components": "^5.1.1"
@@ -49,5 +51,6 @@
     "@storybook/react": "^5.3.19",
     "eslint": "^7.2.0",
     "eslint-plugin-react": "^7.20.0"
+    "@storybook/theming": "^5.3.19"
   }
 }
