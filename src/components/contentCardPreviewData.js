@@ -1,0 +1,47 @@
+export default[
+    {
+        imageUrl: "https://bit.ly/2Z4KKcF",
+        imageAlt: "card image",
+        title: "Exploring open source opportunities",
+        subtitle: "Nicole Henley in Harvard Business Review",
+        publishedDate: "May 22, 2020",
+        timeToRead: "3",
+        contentPreview: "Solutions for a new economy in the 21st century. Adoption and use of free and open source software in India has grown over the last...",
+    },
+    {
+        imageUrl: "https://bit.ly/2Z4KKcF",
+        imageAlt: "card image",
+        title: "Exploring open source opportunities",
+        subtitle: "Nicole Henley in Harvard Business Review",
+        publishedDate: "May 22, 2020",
+        timeToRead: "3",
+        contentPreview: "Solutions for a new economy in the 21st century. Adoption and use of free and open source software in India has grown over the last...",
+    },
+    {
+        imageUrl: "https://bit.ly/2Z4KKcF",
+        imageAlt: "card image",
+        title: "Exploring open source opportunities",
+        subtitle: "Nicole Henley in Harvard Business Review",
+        publishedDate: "May 22, 2020",
+        timeToRead: "3",
+        contentPreview: "Solutions for a new economy in the 21st century. Adoption and use of free and open source software in India has grown over the last...",
+    },
+    {
+        imageUrl: "https://bit.ly/2Z4KKcF",
+        imageAlt: "card image",
+        title: "Exploring open source opportunities",
+        subtitle: "Nicole Henley in Harvard Business Review",
+        publishedDate: "May 22, 2020",
+        timeToRead: "3",
+        contentPreview: "Solutions for a new economy in the 21st century. Adoption and use of free and open source software in India has grown over the last...",
+    },
+    {
+        imageUrl: "https://bit.ly/2Z4KKcF",
+        imageAlt: "card image",
+        title: "Exploring open source opportunities",
+        subtitle: "Nicole Henley in Harvard Business Review",
+        publishedDate: "May 22, 2020",
+        timeToRead: "3",
+        contentPreview: "Solutions for a new economy in the 21st century. Adoption and use of free and open source software in India has grown over the last...",
+    }
+]
