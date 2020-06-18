@@ -6,11 +6,12 @@ import {
     Heading,
     Icon,
     Image,
-    Popover,  PopoverBody, PopoverCloseButton,
+    Popover, PopoverArrow, PopoverBody, PopoverCloseButton,
     PopoverContent, PopoverHeader,
     PopoverTrigger,
     Stack,
-    ThemeProvider
+    ThemeProvider,
+    Button
 } from "@chakra-ui/core";
 import { AiOutlineSave, AiFillFacebook, AiFillLinkedin, AiFillTwitterSquare} from "react-icons/ai";
 import "../stylesheets/contentDetailPage.css";
@@ -30,6 +31,19 @@ const contentDetailProps = {
 };
 
 export default class ContentDetail extends React.Component {
+
+    downloadTxtFile = () => {
+        const element = document.createElement("a");
+        const file = new Blob([
+            "Title: " + contentDetailProps.title +"\n\n"+
+            "Subtitle: " + contentDetailProps.subtitle +"\n\n"+
+            "Author: " + contentDetailProps.author +"\n\n\n"+
+            "Content: " + contentDetailProps.content1 +"\n"+ contentDetailProps.content2], {type: 'text/plain'});
+        element.href = URL.createObjectURL(file);
+        element.download = document.getElementById('myInput').value + ".txt";
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+    }
 
     render() {
         return (
