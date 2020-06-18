@@ -1,5 +1,6 @@
 import React from "react";
 import ContentPage from "./contentPage";
+import ContentDetailPage from "./contentDetailPage";
 
 export default {
     component: ContentPage,
@@ -7,3 +8,4 @@ export default {
 };
 
 export const contentPage = () => <ContentPage />;
+export const contentDetailPage = () => <ContentDetailPage />;

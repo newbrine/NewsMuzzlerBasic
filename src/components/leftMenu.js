@@ -11,7 +11,7 @@ export default class LeftMenu extends React.Component {
                 <Box
                     // width={["100%", "40%", "20%"]}
                     backgroundColor="#2B2737"
-                    transition={'0.5s'}
+                    // transition={'0.5s'}
                     // height={'100%'}
                     zIndex={'1'}
                     top={'0'}
@@ -31,7 +31,7 @@ export default class LeftMenu extends React.Component {
                             </div>
                         </Box>
 
-                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="63px">
+                        <Button _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="63px"  >
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
                                     <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/dashboard-icon-18-256.png"></Image>
@@ -70,7 +70,7 @@ export default class LeftMenu extends React.Component {
                         <Button _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="63px">
                             <div className={"leftMenu-row-btn"} >
                                 <Box size="20px">
-                                    <Image src="https://www.iconsdb.com/icons/preview/white/statistics-xxl.png"></Image>
+                                    <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/combo-icon-256.png"></Image>
                                 </Box>
                                 &nbsp;&nbsp; Statistics
                             </div>
