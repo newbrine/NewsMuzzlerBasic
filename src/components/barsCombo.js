@@ -25,6 +25,30 @@ import Channels from "./channels";
 import ContentPage from "./contentPage";
 import SubscriptionCard from "./subscriptionCard";
 
+const recentNewsletters = [
+    {id:1, title: 'How do I Back Up my Computer?', date: 'June 9th, 2020 10:37AM',
+        activity: 'Sent by Source'},
+
+    {id:2, title: 'How do I remove Malware?', date: 'June 8th, 2020 10:37AM',
+        activity: 'Read by Me'},
+];
+
+const recentNewslettersTwo = [
+    {id:1, title: 'Title 1', date: 'June 5th, 2020 10:37AM',
+        activity: 'Sent by Source'},
+
+    {id:2, title: 'Title 2', date: 'June 2th, 2020 10:37AM',
+        activity: 'Read by Me'},
+];
+
+const newsletterInformation = [
+    {id:1, name: 'Ask Leo', subscriptionEmail: 'cal980@newsmuzzler.com', forwardingEmail: 'iosifweir@gmail.com',
+     savedNumber: '6', likedNumber: '4', contents: recentNewsletters},
+
+    {id:2, name: 'Harvard Business Review', subscriptionEmail: 'cal980@newsmuzzler.com', forwardingEmail: 'iosifweir@gmail.com',
+     savedNumber: '2', likedNumber: '7', recievingEmail: 'Work Email', contents: recentNewslettersTwo},
+]
+
 const initialState = (<Box> </Box>);
 const reducer = (state, action) => {
     switch(action.type) {
@@ -42,13 +66,7 @@ const reducer = (state, action) => {
         }
         case "subscriptions": {
             navProps.heading = "Subscriptions";
-            return <SubscriptionCard newsletterName='Ask Leo'
-                                     likedNumber="4"
-                                     savedNumber='6'
-                                     elements={3}
-                                     titles={["Title 1", "Title 2", "Title 3"]}
-                                     dates={["June 9th, 2020 10:37AM", "June 8th, 2020 10:37AM", "June 7th, 2020 10:37AM"]}
-                                     activity={["Sent by source", "Read by me", "Sent by source"]}/>;
+            return <SubscriptionCard information={newsletterInformation}/>;
         }
         case "statistics": {
             navProps.heading = "Statistics";

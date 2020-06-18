@@ -153,7 +153,6 @@ function EmailData() {
             );
 
         return(
-            <ThemeProvider>
 
                     <Box backgroundColor={"#F2F2F2"}>
                         <Box paddingLeft="20px">
@@ -244,7 +243,6 @@ function EmailData() {
                             </Stack>
                         </Box>
                     </Box>
-            </ThemeProvider>
         );
     }
 

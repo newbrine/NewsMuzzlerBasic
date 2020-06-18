@@ -7,12 +7,17 @@ export default{
     title: 'Subscription Card'
 };
 
-export const Default = () => <SubscriptionCard 
-                                newsletterName='Ask Leo' 
-                                likedNumber="4" 
-                                savedNumber='6'
-                                elements={3}
-                                titles={['Title 1', 'Title 2', 'Title 3']}
-                                dates={['June 9th, 2020 10:37AM', 'June 8th, 2020 10:37AM', 'June 7th, 2020 10:37AM']}
-                                activity={['Sent by source', 'Read by me', 'Sent by source']}
-                             />;
+const recentNewsletters = [
+    {id:1, title: 'How do I Back Up my Computer?', date: 'June 9th, 2020 10:37AM',
+        activity: 'Sent by Source'},
+
+    {id:2, title: 'How do I remove Malware?', date: 'June 8th, 2020 10:37AM',
+        activity: 'Read by Me'},
+];
+
+const newsletterInformation = [
+    {id:1, name: 'Ask Leo', subscriptionEmail: 'cal980@newsmuzzler.com', forwardingEmail: 'iosifweir@gmail.com',
+     savedNumber: '6', likedNumber: '4', contents: recentNewsletters, state: false},
+]
+
+export const Default = () => <SubscriptionCard information={newsletterInformation} />;
