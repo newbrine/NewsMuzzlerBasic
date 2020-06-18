@@ -137,6 +137,15 @@
     border-radius: 4px;
 }
 
+.createEmail-placeHolder {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #BFBFBF;
+}
+
 .channelsMain-col-1 {width: 8.33%}
 .channelsMain-col-2 {width: 16.66%}
 .channelsMain-col-3 {width: 25%}
