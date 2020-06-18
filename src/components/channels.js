@@ -155,15 +155,7 @@ function EmailData() {
             );
 
         return(
-            <SimpleGrid columns={2} gridTemplateColumns={'17% 83%'}>
-                {/*Left Part*/}
-                <Box backgroundColor={'#2b2737'} >
-                    <LeftMenu />
-                </Box>
-
-                {/*Right Part*/}
                 <Box backgroundColor={'#F2F2F2'}>
-                    <TopNav />
                     <Box paddingLeft="20px">
                         <Box paddingTop="40px" paddingBottom="40px">
                             <Button height="40px" backgroundColor="#6E61BF" className={"channelsMain-Btn channelsMain-lgBtnTxt"} onClick={createToggle}>
@@ -251,7 +243,6 @@ function EmailData() {
                         </Stack>
                     </Box>
                 </Box>
-            </SimpleGrid>
         );
     }
 

@@ -14,7 +14,7 @@ export default function SubscriptionCard(props){
 
     const newsletters = props.information.map((content) =>
     <>
-    <Grid templateColumns='28% 28% 28% 12% 4%' key={content.id}>
+    <Grid padding='20px' templateColumns='28% 28% 28% 12% 4%' key={content.id}>
         <Box height='135px' textAlign='left' alignItems='top'>
             <Heading as='h3' size='md'> {content.name}</Heading>
             <Text> {content.receivingEmail}</Text>
