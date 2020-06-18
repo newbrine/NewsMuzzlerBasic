@@ -26,7 +26,7 @@ function EmailData() {
         {id:5, buttonName: "Travel", buttonState: false}
     ];
     const [buttonStatus, setStatus] = React.useState(buttons);
-    const updateStatus = index => {
+    const updateStatus = index => e => {
         let newArr = [...buttonStatus]; // copying the old datas array
         newArr[index] = {id:index, buttonName: newArr[index].buttonName, buttonState: !newArr[index].buttonState};// replace new value with whatever we want to change it to
         setStatus(newArr);
