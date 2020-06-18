@@ -1,7 +1,19 @@
-.contentDetail-Icon {
-    padding-right: 1.5rem;
+.contentDetail-IconBox {
+    margin-right: 1.5rem;
     width: 20px;
     height: 20px;
+}
+
+.contentDetail-Icon {
+    width: 20px;
+    height: 20px;
+}
+
+.PopoverHeader-custom {
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: .5px;
 }
 
 .contentDetail-Body {
