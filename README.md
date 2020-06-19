@@ -10,7 +10,11 @@ As of time of development the back-end necessary has not been fully developed, s
 
     The card in the red box of Fig. 1-1 is the Content Card. The attributes of the data in the content card is illustrated in the Table 1-1.
     
-    ![Content Card]()
+    <div align=center>
+        <img src="/public/images/ContentCard.png" 
+            width="100%" alt="Content Card" />
+        <p>Fig. 1-1. Content Card.</p>
+    </div> <br>
 
     |    Fields   |    Format   | Description |   Example   |
     | ----------- | ----------- | ----------- | ----------- |
@@ -22,11 +26,19 @@ As of time of development the back-end necessary has not been fully developed, s
     |  timeToRead |    String   | How many minutes it will take for a user to read this article. This value should be based on the number of words in that article. Generally the read speed is 200 words per minute. | “5” |
     |contentPreview|   String   | The first 100 words of the main body of the article. | “Navigating the travel landscape as a nomad. If the only reason you want to become a digital nomad is to travel, a one year trip as a...” |
 
+    <div align=center>
+        <p>Table 1-1. Attributes of Content Card Data.</p>
+    </div> <br>
+
 - Recommended Content Card
 
     The card in the red box of Fig. 2-1 below is the Recommended Content Card. The attributes of the data in the content card is illustrated in the Table 2-1.
 
-    ![Recommended Content Card]()
+    <div align=center>
+        <img src="/public/images/RecommendedCard.png" 
+            width="100%" alt="Recommended Content Card" />
+        <p>Fig. 2-1. Recommended Content Card.</p>
+    </div> <br>
 
     |    Fields   |    Format   | Description |   Example   |
     | ----------- | ----------- | ----------- | ----------- |
@@ -35,3 +47,7 @@ As of time of development the back-end necessary has not been fully developed, s
     |    title    |    String   | The title of the article/email. | “How to be a travel nomad” |
     |   subtitle  |    String   | The subtitle of the article/email. | “Luke Thomas in Intrepid Travel” |
     |publishedDate|    String   | The published date of that article. “Month Date, Year” | “Apr 30, 2020” |
+    
+    <div align=center>
+        <p>Table 2-1. Attributes of Recommended Content Card Data.</p>
+    </div> <br>
