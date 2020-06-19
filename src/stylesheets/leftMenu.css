@@ -1,3 +1,77 @@
+
+/*.sidebar {*/
+/*    width: 300px;*/
+/*    background-size: 200%;*/
+/*    background-position: 0 100%;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    height: 100%;*/
+/*    transform: translateX(-230px);*/
+/*    transition: 300ms ease-in-out;*/
+/*    z-index: 1;*/
+/*    overflow: hidden;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.sidebar.leftMenu-description {*/
+/*    display: none;*/
+/*}*/
+
+/*.sidebar--expanded {*/
+/*    background-size: 100%;*/
+/*    background-position: 0 0;*/
+/*    transform: translateX(0);*/
+/*}*/
+
+/*.sidebar--expanded.leftMenu-description {*/
+/*    display: block;*/
+/*}*/
+
+/*.sidebar:hover {*/
+/*    background-position: 0 0;*/
+/*}*/
+
+/*.sidebar__toggle {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    height: 4rem;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    border: none;*/
+/*    background: transparent;*/
+/*    font-size: 20px;*/
+/*    color: white;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: flex-end;*/
+/*    padding-right: 1.8rem;*/
+/*    padding-bottom: 0;*/
+/*    transition: 300ms ease;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.sidebar__toggle:focus {*/
+/*    outline: none;*/
+/*}*/
+
+/*.main-content {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    padding: 0 3% 4rem;*/
+/*    margin-left: 4.5rem;*/
+/*    transition: 300ms ease-in-out;*/
+/*    position: relative;*/
+/*    z-index: 2;*/
+/*}*/
+
+/*.main-content--expanded {*/
+/*    margin-left: 310px;*/
+/*}*/
+
+
 .leftMenu-btnTxt {
     font-family: Roboto;
     font-style: normal;
@@ -31,7 +105,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-left: 40px;
+    /*padding-left: 40px;*/
 }
 
 .leftMenu-row-btn {
@@ -45,7 +119,14 @@
 .leftMenu-col-2 {width: 30%}
 /* .col-btn {width: 20%} */
 
-@media (max-width: 1280px) {
+.leftMenu-description {
+    display: block;
+    width: 0;
+    color: #FFFFFF;
+    transition: color .5s;
+}
+
+@media screen and (max-width: 1280px) {
     .leftMenu-row-btn {
         width: 100%;
         display: flex;

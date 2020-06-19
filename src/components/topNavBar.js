@@ -17,6 +17,13 @@ export default class TopNavBar extends React.Component{
         // document.getElementById("leftMenu").style.display = "block";
         document.getElementById("leftMenu").style.width = "17%";
         document.getElementById("mainPage").style.width = "83%";
+        var leftMenu = document.getElementById("leftMenu-root");
+        var leftMenu_Descriptions = leftMenu.getElementsByClassName("leftMenu-description");
+        var i;
+        for (i = 0; i < leftMenu_Descriptions.length; i++) {
+            console.log(i);
+            leftMenu_Descriptions[i].style.color = "#FFFFFF";
+        }
     }
 
     render() {
