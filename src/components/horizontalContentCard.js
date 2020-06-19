@@ -16,9 +16,19 @@ import LazyLoad from 'react-lazyload';
 export default class HorizontalContentCard extends React.Component {
 
     closeLeftMenu = () => {
-        document.getElementById("leftMenu").style.width = "0";
-        document.getElementById("mainPage").style.width = "100%";
-        document.getElementsByClassName("leftMenu-btnTxt").style.display = "none";
+        document.getElementById("leftMenu").style.width = "4%";
+        document.getElementById("mainPage").style.width = "96%";
+        // document.getElementsByClassName("leftMenu-btnTxt").style.display = "none";
+        // document.getElementsByClassName("leftMenu-description").style.display = "none";
+        // document.getElementById("leftMenu-description").style.display = "none";
+        // document.getElementsByClassName("leftMenu-description").style.width = "0";
+        var leftMenu = document.getElementById("leftMenu-root");
+        var leftMenu_Descriptions = leftMenu.getElementsByClassName("leftMenu-description");
+        var i;
+        for (i = 0; i < leftMenu_Descriptions.length; i++) {
+            console.log(i);
+            leftMenu_Descriptions[i].style.color = "transparent";
+        }
     }
 
     render() {
