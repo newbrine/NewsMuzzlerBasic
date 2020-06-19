@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack, Flex, Button, ThemeProvider, Collapse, Image, Input, Textarea} from "@chakra-ui/core";
+import { Box, Stack, Flex, Button, Collapse, Image, Input, Textarea} from "@chakra-ui/core";
 import "../stylesheets/channelsMain.css";
 
 function EmailData() {

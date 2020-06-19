@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Image, Badge, ThemeProvider} from "@chakra-ui/core";
+import {Box, Image, Badge} from "@chakra-ui/core";
 
 
 const property = {

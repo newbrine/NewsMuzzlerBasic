@@ -1,8 +1,6 @@
 import React from "react";
-import LeftMenu from "./leftMenu";
-import TopNav from "./topNavBar";
 import HorizontalContentCard from "./horizontalContentCard";
-import {Box, Heading, SimpleGrid, Stack, Flex} from "@chakra-ui/core";
+import {Box, Heading, SimpleGrid, Stack} from "@chakra-ui/core";
 import RecommendContentCard from "./recommendContentCard";
 import contentCardPreviewData from "../data/contentCardPreviewData";
 import recommendContentCardData from "../data/recommendContentCardData";
@@ -11,7 +9,7 @@ export default class contentPage extends React.Component {
 
     render() {
         return (
-                <Box id={"mainPage"} width={'83%'} backgroundColor={'#E5E5E5'} transition="width 1s">
+                <Box id={"mainPage"} width={'100%'} backgroundColor={"#E5E5E5"} transition="width 1s">
                     <SimpleGrid columns={2} gridTemplateColumns={'80% 20%'}>
                         <Stack>
                             {

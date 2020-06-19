@@ -1,12 +1,10 @@
 import React, { useReducer } from "react";
 import {
-    ThemeProvider,
     CSSReset,
     Box,
     Stack,
     Button,
     Image,
-    SimpleGrid,
     Flex,
     Heading,
     InputGroup,
@@ -82,148 +80,158 @@ const navProps = {
     notificationContent: "No New Notifications",
 };
 
-//unusable
+
 React.openLeftMenu = () => {
-    document.getElementById("leftMenu").style.display = "block";
-    document.getElementById("mainPage").style.width = "100%";
+    document.getElementById("leftMenu").style.width = "17%";
+    document.getElementById("mainPage").style.width = "83%";
+    var leftMenu = document.getElementById("leftMenu-root");
+    var leftMenu_Descriptions = leftMenu.getElementsByClassName("leftMenu-description");
+    var i;
+    for (i = 0; i < leftMenu_Descriptions.length; i++) {
+        console.log(i);
+        leftMenu_Descriptions[i].style.color = "#FFFFFF";
+    }
 };
 
 export default function BarsCombo(){
 
     const [selectedComponent, dispatch] = useReducer(reducer, initialState);
     return (
-        <SimpleGrid columns={2} gridTemplateColumns={"17% 83%"}>
-            <Box backgroundColor={"#2b2737"} >
+        <Flex >
+            <Box id={"leftMenu"} width={'17%'} transition="width 1s" backgroundColor={"#2b2737"}>
+                <CSSReset />
+                <Box
+                    backgroundColor={"#2B2737"}>
+                    <Stack spacing={0} id={"leftMenu-root"}>
+                        <Box paddingTop={"30px"} paddingBottom={"30px"} color={"#FFFFFF"}>
+                            <Flex flexWrap={"wrap"} alignItems={"center"} justifyContent={"flex-start"}>
+                                <Flex >
+                                    &nbsp;&nbsp;
+                                    <Image size="40px" src="https://cdn.iconscout.com/icon/free/png-256/news-1445770-1224362.png"></Image>
+                                </Flex>
+                                <p className={"leftMenu-description"}>
+                                    NewsMuzzler
+                                </p>
+                            </Flex>
+                        </Box>
 
-                <ThemeProvider>
-                    <CSSReset />
-                    <Box
-                        backgroundColor="#2B2737">
-                        <Stack spacing={0}>
-                            <Box paddingTop={"30px"} paddingBottom={"30px"} color={"#FFFFFF"}>
-                                <div className="leftMenu-row">
-                                    <div className={"leftMenu-col-2"} >
-                                        <Image size="40px" src="https://cdn.iconscout.com/icon/free/png-256/news-1445770-1224362.png"/>
-                                    </div>
-                                    <div className={"leftMenu-header leftMenu-col-2"}>
-                                        NewsMuzzler
-                                    </div>
-                                </div>
-                            </Box>
+                        <Button onClick={() => dispatch({type: "dashboard"})} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                            <div className={"leftMenu-row-btn"} >
+                                <Box size="20px">
+                                    <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/dashboard-icon-18-256.png"></Image>
+                                </Box>
 
-                            <Button onClick={() => dispatch({type: "dashboard"})} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
-                                <div className={"leftMenu-row-btn"} >
-                                    <Box size="20px">
-                                        <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/dashboard-icon-18-256.png"/>
-                                    </Box>
-                                    &nbsp;&nbsp; Dashboard
-                                </div>
-                            </Button>
-
-                            <Button onClick={() => dispatch({type: "channels"})} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
-                                <div className={"leftMenu-row-btn"} >
-                                    <Box size="20px">
-                                        <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/channel-mosaic-icon-18-64.png"/>
-                                    </Box>
-                                    &nbsp;&nbsp; Channels
-                                </div>
-                            </Button>
-
-                            <Button onClick={() => dispatch({type:"content"})} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
-                                <div className={"leftMenu-row-btn"} >
-                                    <Box size="20px">
-                                        <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/today-icon-18-64.png"/>
-                                    </Box>
-                                    &nbsp;&nbsp; Content
-                                </div>
-                            </Button>
-
-                            <Button onClick={() => dispatch({type:"subscriptions"})} _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
-                                <div className={"leftMenu-row-btn"} >
-                                    <Box size="20px">
-                                        <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/contacts-2-icon-18-64.png"/>
-                                    </Box>
-                                    &nbsp;&nbsp; Subscriptions
-                                </div>
-                            </Button>
-
-                            <Button onClick={() => dispatch({type:"statistics"})} _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
-                                <div className={"leftMenu-row-btn"} >
-                                    <Box size="20px">
-                                        <Image src="https://www.iconsdb.com/icons/preview/white/statistics-xxl.png"/>
-                                    </Box>
-                                    &nbsp;&nbsp; Statistics
-                                </div>
-                            </Button>
-
-                            <div>
-
+                                <div className="leftMenu-description">&nbsp;&nbsp; Dashboard</div>
                             </div>
-                        </Stack>
-                        <Box h={500}/>
-                    </Box>
-                </ThemeProvider>
+                        </Button>
+
+                        <Button onClick={() => dispatch({type: "channels"})} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                            <div className={"leftMenu-row-btn"} >
+                                <Box size="20px">
+                                    <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/channel-mosaic-icon-18-64.png"></Image>
+                                </Box>
+
+                                <div className="leftMenu-description">&nbsp;&nbsp; Channels</div>
+                            </div>
+                        </Button>
+
+                        <Button onClick={() => dispatch({type:"content"})} _hover={{background: "#534488", stroke: "#534488" }} backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                            <div className={"leftMenu-row-btn"} >
+                                <Box size="20px">
+                                    <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/today-icon-18-64.png"></Image>
+                                </Box>
+
+                                <div className="leftMenu-description">&nbsp;&nbsp; Content</div>
+                            </div>
+                        </Button>
+
+                        <Button onClick={() => dispatch({type:"subscriptions"})} _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                            <div className={"leftMenu-row-btn"} >
+                                <Box size="20px">
+                                    <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/64/png/contacts-2-icon-18-64.png"></Image>
+                                </Box>
+
+                                <div className="leftMenu-description">&nbsp;&nbsp; Subscriptions</div>
+                            </div>
+                        </Button>
+
+                        <Button onClick={() => dispatch({type:"statistics"})} _hover={{background: "#534488", stroke: "#534488" }}  backgroundColor="#2B2737" className={"leftMenu-btnTxt"} height="90px">
+                            <div className={"leftMenu-row-btn"} >
+                                <Box size="20px">
+                                    <Image src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/combo-icon-256.png"></Image>
+                                </Box>
+
+                                <span className="leftMenu-description" >&nbsp;&nbsp; Statistics</span>
+                            </div>
+                        </Button>
+
+                        <div>
+
+                        </div>
+                    </Stack>
+                    <Box h={500}/>
+                </Box>
             </Box>
 
-                <Box backgroundColor={"#E5E5E5"}>
-                        <div className={"row"}>
-                            <Flex
-                                as="nav"
-                                align="center"
-                                flexDirection={"row"}
-                                // justify="space-between"
-                                wrap="wrap"
-                                padding="4px"
-                                backgroundColor="#F2F2F2"
-                                color="#000000"
-                                height={"60px"}
-                                boxShadow={"0px 0px 4px rgba(0, 0, 0, 0.25)"}
-                                marginBottom={"2%"}
+            <Box id={"mainPage"} width={'83%'} transition="width 1s" backgroundColor={"#E5E5E5"}>
+                <div className={"row"}>
+                    <Flex
+                        as="nav"
+                        align="center"
+                        flexDirection={"row"}
+                        // justify="space-between"
+                        wrap="wrap"
+                        padding="4px"
+                        backgroundColor="#F2F2F2"
+                        color="#000000"
+                        height={"60px"}
+                        boxShadow={"0px 0px 4px rgba(0, 0, 0, 0.25)"}
+                        marginBottom={"2%"}
+                    >
+                        <box align="left" className={"col-2"}>
+                            <Heading onClick={React.openLeftMenu} as="h1" letterSpacing={""} fontSize={"20px"} color={"#000000"} paddingLeft={"10%"}>
+                                {navProps.heading}
+                            </Heading>
+                        </box>
+
+                        <div className={"col-6"}></div>
+                        <Flex className={"col-4"} flexDirection={"row"} justifyContent={"space-around"} alignItems={"center"}>
+                            <Box >
+                                <InputGroup borderColor={"#6E61BF"}>
+                                    <InputLeftElement children={<Icon name="search" color="#595959" />}  />
+                                    <Input placeholder="Search" />
+                                </InputGroup>
+                            </Box>
+
+                            <Box
+                                // paddingLeft={'5%'}
                             >
-                                <box align="left" className={"col-2"}>
-                                    <Heading onClick={React.openLeftMenu} as="h1" letterSpacing={""} fontSize={"20px"} color={"#000000"} paddingLeft={"10%"}>
-                                        {navProps.heading}
-                                    </Heading>
-                                </box>
+                                <Popover>
+                                    <PopoverTrigger>
+                                        <Icon name={"bell"} size="24px"/>
+                                    </PopoverTrigger>
+                                    <PopoverContent zIndex={4}>
+                                        <PopoverArrow />
+                                        <PopoverCloseButton />
+                                        <PopoverHeader>Notifications</PopoverHeader>
+                                        <PopoverBody>{navProps.notificationContent}</PopoverBody>
+                                    </PopoverContent>
+                                </Popover>
+                            </Box>
 
-                                <div className={"col-6"}></div>
-                                <Flex className={"col-4"} flexDirection={"row"} justifyContent={"space-around"} alignItems={"center"}>
-                                    <Box >
-                                        <InputGroup borderColor={"#6E61BF"}>
-                                            <InputLeftElement children={<Icon name="search" color="#595959" />}  />
-                                            <Input placeholder="Search" />
-                                        </InputGroup>
-                                    </Box>
-
-                                    <Box
-                                        // paddingLeft={'5%'}
-                                    >
-                                        <Popover>
-                                            <PopoverTrigger>
-                                                <Icon name={"bell"} size="24px"/>
-                                            </PopoverTrigger>
-                                            <PopoverContent zIndex={4}>
-                                                <PopoverArrow />
-                                                <PopoverCloseButton />
-                                                <PopoverHeader>Notifications</PopoverHeader>
-                                                <PopoverBody>{navProps.notificationContent}</PopoverBody>
-                                            </PopoverContent>
-                                        </Popover>
-                                    </Box>
-
-                                    <Box
-                                        // mr={'4%'}
-                                        borderRadius={"50%"}
-                                        boxShadow={"0px 4px 4px rgba(0, 0, 0, 0.29)"}
-                                    >
-                                        <Avatar name={navProps.userName} src={navProps.userImgUrl} />
-                                    </Box>
-                                </Flex>
-                            </Flex>
-                        </div>
-                    {selectedComponent}
-                </Box>
-        </SimpleGrid>
+                            <Box
+                                // mr={'4%'}
+                                borderRadius={"50%"}
+                                boxShadow={"0px 4px 4px rgba(0, 0, 0, 0.29)"}
+                            >
+                                <Avatar name={navProps.userName} src={navProps.userImgUrl} />
+                            </Box>
+                        </Flex>
+                    </Flex>
+                </div>
+                {selectedComponent}
+            </Box>
+        </Flex>
     );
 
 }
