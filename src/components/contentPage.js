@@ -14,7 +14,7 @@ export default class contentPage extends React.Component {
                         <Stack>
                             {
                                 contentCardPreviewData.map((card, index) => {
-                                    return <HorizontalContentCard {...card} />
+                                    return <HorizontalContentCard key={index} {...card}/>
                                 })
                             }
                         </Stack>
