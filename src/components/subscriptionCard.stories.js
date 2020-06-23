@@ -7,17 +7,19 @@ export default{
     title: 'Subscription Card'
 };
 
-const recentNewsletters = [
-    {id:1, title: 'How do I Back Up my Computer?', date: 'June 9th, 2020 10:37AM',
-        activity: 'Sent by Source'},
+// const subscriptionsArray = [
+//     {newsletterName: "Ask Leo", likedNumber: "4", savedNumber: "6", receivingEmail: 'work email', elements: 3,
+//         titles: ['How do I Back Up my Computer?', 'How do I remove malware?', 'Dealing with browser problems'], SubscriptionCarddates: ['June 9th, 2020 10:37AM', 'June 8th, 2020 10:37AM', 'June 7th, 2020 10:37AM'],
+//         activity: ['Sent by source', 'Read by me', 'Sent by source'], dates: ['January 22, 2019, 4:08 PM']},
+//     {newsletterName: "Harvard Business Review", likedNumber: "4", savedNumber: "6", receivingEmail: 'work email',
+//         titles: ['How do I Back Up my Computer?', 'How do I remove malware?', 'Dealing with browser problems'],  SubscriptionCarddates: ['June 9th, 2020 10:37AM', 'June 8th, 2020 10:37AM', 'June 7th, 2020 10:37AM'],
+//         activity: ['Sent by source', 'Read by me', 'Sent by source'], dates: ['June 15, 2020, 6:09 PM']},
+//     {newsletterName: "The Skim", likedNumber: "8", savedNumber: "6", receivingEmail: 'work email', elements: 3,
+//         titles: ['How do I Back Up my Computer?', 'How do I remove malware?', 'Dealing with browser problems'],  SubscriptionCarddates: ['June 9th, 2020 10:37AM', 'June 8th, 2020 10:37AM', 'June 7th, 2020 10:37AM'],
+//         activity: ['Sent by source', 'Read by me', 'Sent by source'], dates: ['April 23, 2020, 4:03 PM']},
+//     {newsletterName: "The news times", likedNumber: "20", savedNumber: "6", receivingEmail: 'work email', elements: 3,
+//         titles: ['How do I Back Up my Computer?', 'How do I remove malware?', 'Dealing with browser problems'],  SubscriptionCarddates: ['June 9th, 2020 10:37AM', 'June 8th, 2020 10:37AM', 'June 7th, 2020 10:37AM'],
+//         activity: ['Sent by source', 'Read by me', 'Sent by source'], dates: ['March 23, 2019, 9:15 PM']},
+// ];
 
-    {id:2, title: 'How do I remove Malware?', date: 'June 8th, 2020 10:37AM',
-        activity: 'Read by Me'},
-];
-
-const newsletterInformation = [
-    {id:1, name: 'Ask Leo', subscriptionEmail: 'cal980@newsmuzzler.com', forwardingEmail: 'iosifweir@gmail.com',
-     savedNumber: '6', likedNumber: '4', contents: recentNewsletters, state: false},
-]
-
-export const Default = () => <SubscriptionCard information={newsletterInformation} />;
+export const Default = () => <SubscriptionCard/>;
