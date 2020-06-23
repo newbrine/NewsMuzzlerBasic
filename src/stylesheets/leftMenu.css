@@ -99,6 +99,7 @@
     text-align: center;
 
     color: #FFFFFF;
+    transition: color .5s;
 }
 
 .leftMenu-row {

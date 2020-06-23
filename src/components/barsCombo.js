@@ -86,6 +86,8 @@ React.openLeftMenu = () => {
     document.getElementById("mainPage").style.width = "83%";
     var leftMenu = document.getElementById("leftMenu-root");
     var leftMenu_Descriptions = leftMenu.getElementsByClassName("leftMenu-description");
+    var leftMenu_Headers = leftMenu.getElementsByClassName("leftMenu-header");
+    leftMenu_Headers[0].style.color = "#FFFFFF";
     var i;
     for (i = 0; i < leftMenu_Descriptions.length; i++) {
         console.log(i);
@@ -104,14 +106,16 @@ export default function BarsCombo(){
                     backgroundColor={"#2B2737"}>
                     <Stack spacing={0} id={"leftMenu-root"}>
                         <Box paddingTop={"30px"} paddingBottom={"30px"} color={"#FFFFFF"}>
-                            <Flex flexWrap={"wrap"} alignItems={"center"} justifyContent={"flex-start"}>
-                                <Flex >
+                            <Flex flexWrap={"wrap"} alignItems={"center"} justifyContent={"space-evenly"}>
+                                <Flex pr="5%">
                                     &nbsp;&nbsp;
                                     <Image size="40px" src="https://cdn.iconscout.com/icon/free/png-256/news-1445770-1224362.png"></Image>
                                 </Flex>
-                                <p className={"leftMenu-description"}>
-                                    NewsMuzzler
-                                </p>
+                                <Box pr="20%">
+                                    <p className={"leftMenu-header"}>
+                                        NewsMuzzler
+                                    </p>
+                                </Box>
                             </Flex>
                         </Box>
 
@@ -173,7 +177,7 @@ export default function BarsCombo(){
                 </Box>
             </Box>
 
-            <Box id={"mainPage"} width={'83%'} transition="width 1s" backgroundColor={"#E5E5E5"}>
+            <Box id={"mainPage"} width={'83%'} transition="width 1s" backgroundColor={"#F2F2F2"}>
                 <div className={"row"}>
                     <Flex
                         as="nav"

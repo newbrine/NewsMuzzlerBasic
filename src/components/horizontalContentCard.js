@@ -11,6 +11,8 @@ function HorizontalContentCard(props) {
         document.getElementById("mainPage").style.width = "96%";
         var leftMenu = document.getElementById("leftMenu-root");
         var leftMenu_Descriptions = leftMenu.getElementsByClassName("leftMenu-description");
+        var leftMenu_Headers = leftMenu.getElementsByClassName("leftMenu-header");
+        leftMenu_Headers[0].style.color = "transparent";
         var i;
         for (i = 0; i < leftMenu_Descriptions.length; i++) {
             console.log(i);
