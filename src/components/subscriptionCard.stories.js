@@ -1,6 +1,5 @@
-import React from 'react'
-import { action } from '@storybook/addon-actions'
-import SubscriptionCard from './subscriptionCard'
+import React from 'react';
+import SubscriptionCard from './subscriptionCard';
 
 export default{
     component: SubscriptionCard,

@@ -1,5 +1,6 @@
 export default[
     {
+        id:1,
         imageUrl: "https://bit.ly/2Z4KKcF",
         imageAlt: "card image",
         title: "Exploring open source opportunities",
@@ -9,6 +10,7 @@ export default[
         contentPreview: "Solutions for a new economy in the 21st century. Adoption and use of free and open source software in India has grown over the last.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod....",
     },
     {
+        id:2,
         imageUrl: "https://www.w3schools.com/howto/img_forest.jpg",
         imageAlt: "card image",
         title: "How to be a travel nomad",
@@ -18,6 +20,7 @@ export default[
         contentPreview: "Navigating the travel landscape as a nomad. If the only reason you want to become a digital nomad is to travel, a one year trip as a...",
     },
     {
+        id:3,
         imageUrl: "https://www.w3schools.com/howto/img_snow.jpg",
         imageAlt: "card image",
         title: "The Ins and Outs of Social Media",
@@ -27,6 +30,7 @@ export default[
         contentPreview: "The new era of social media and what it means. Social media marketing has become a necessity for any business hoping to...",
     },
     {
+        id:4,
         imageUrl: "https://www.w3schools.com/w3images/lights.jpg",
         imageAlt: "card image",
         title: "The future of portable devices",
@@ -36,6 +40,7 @@ export default[
         contentPreview: "Our devices keep getting smaller and smaller. Despite extensive attempts to develop portable devices for pathogen detection...",
     },
     {
+        id:5,
         imageUrl: "https://www.w3schools.com/w3images/cars2.jpg",
         imageAlt: "card image",
         title: "Choosing the right travel camera",
@@ -45,6 +50,7 @@ export default[
         contentPreview: "How to choose the right camera for your travels. In general a camera with a large sensor is going to perform better in low light because...",
     },
     {
+        id:6,
         imageUrl: "https://i.pcmag.com/imagery/articles/00Cx7vFIetxCuKxQeqPf8mi-23.fit_scale.size_2698x1517.v1580943870.jpg",
         imageAlt: "card image",
         title: "Exploring open source opportunities",
@@ -54,6 +60,7 @@ export default[
         contentPreview: "Solutions for a new economy in the 21st century. Adoption and use of free and open source software in India has grown over the last...",
     },
     {
+        id:7,
         imageUrl: "https://www.jeep.com/content/dam/fca-brands/na/jeep/en_us/2020/wrangler/gallery/capability/Gallery-Capability-White-Mountain-Terrain-Desktop.jpg.image.1440.jpg",
         imageAlt: "card image",
         title: "How to be a travel nomad",
@@ -63,6 +70,7 @@ export default[
         contentPreview: "Navigating the travel landscape as a nomad. If the only reason you want to become a digital nomad is to travel, a one year trip as a...",
     },
     {
+        id:8,
         imageUrl: "https://pic5.40017.cn/03/000/dd/48/rB5oQFx9-RWAIE49AAG4uVc17aM381.jpg",
         imageAlt: "card image",
         title: "The Ins and Outs of Social Media",
@@ -72,6 +80,7 @@ export default[
         contentPreview: "The new era of social media and what it means. Social media marketing has become a necessity for any business hoping to...",
     },
     {
+        id:9,
         imageUrl: "https://images.shobserver.com/news/690_390/2020/1/19/2134021110b64a3694320050f361b39c.jpg",
         imageAlt: "card image",
         title: "The future of portable devices",
@@ -81,6 +90,7 @@ export default[
         contentPreview: "Our devices keep getting smaller and smaller. Despite extensive attempts to develop portable devices for pathogen detection...",
     },
     {
+        id:10,
         imageUrl: "https://www.w3schools.com/w3images/cars2.jpg",
         imageAlt: "card image",
         title: "Choosing the right travel camera",
@@ -90,6 +100,7 @@ export default[
         contentPreview: "How to choose the right camera for your travels. In general a camera with a large sensor is going to perform better in low light because...",
     },
     {
+        id:11,
         imageUrl: "https://bit.ly/2Z4KKcF",
         imageAlt: "card image",
         title: "Exploring open source opportunities",
@@ -99,6 +110,7 @@ export default[
         contentPreview: "Solutions for a new economy in the 21st century. Adoption and use of free and open source software in India has grown over the last...",
     },
     {
+        id:12,
         imageUrl: "https://www.w3schools.com/howto/img_forest.jpg",
         imageAlt: "card image",
         title: "How to be a travel nomad",
@@ -108,6 +120,7 @@ export default[
         contentPreview: "Navigating the travel landscape as a nomad. If the only reason you want to become a digital nomad is to travel, a one year trip as a...",
     },
     {
+        id:13,
         imageUrl: "https://www.w3schools.com/howto/img_snow.jpg",
         imageAlt: "card image",
         title: "The Ins and Outs of Social Media",
@@ -117,6 +130,7 @@ export default[
         contentPreview: "The new era of social media and what it means. Social media marketing has become a necessity for any business hoping to...",
     },
     {
+        id:14,
         imageUrl: "https://www.w3schools.com/w3images/lights.jpg",
         imageAlt: "card image",
         title: "The future of portable devices",
@@ -126,6 +140,7 @@ export default[
         contentPreview: "Our devices keep getting smaller and smaller. Despite extensive attempts to develop portable devices for pathogen detection...",
     },
     {
+        id:15,
         imageUrl: "https://www.w3schools.com/w3images/cars2.jpg",
         imageAlt: "card image",
         title: "Choosing the right travel camera",

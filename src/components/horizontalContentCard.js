@@ -39,7 +39,6 @@ export default class HorizontalContentCard extends React.Component {
                     boxShadow={'0px 1px 4px rgba(0, 0, 0, 0.16), 0px 0px 2px rgba(0, 0, 0, 0.08)'}
                     borderRadius={'2px'}
                     margin={'0% 2% 2% 2%'}
-                    // height={'150px'}
                     height={'160px'}
                     width="96%"
                     onClick={this.closeLeftMenu}

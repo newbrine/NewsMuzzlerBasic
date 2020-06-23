@@ -188,11 +188,11 @@ export default function BarsCombo(){
                         boxShadow={"0px 0px 4px rgba(0, 0, 0, 0.25)"}
                         marginBottom={"2%"}
                     >
-                        <box align="left" className={"col-2"}>
+                        <Box align="left" className={"col-2"}>
                             <Heading onClick={React.openLeftMenu} as="h1" letterSpacing={""} fontSize={"20px"} color={"#000000"} paddingLeft={"10%"}>
                                 {navProps.heading}
                             </Heading>
-                        </box>
+                        </Box>
 
                         <div className={"col-6"}></div>
                         <Flex className={"col-4"} flexDirection={"row"} justifyContent={"space-around"} alignItems={"center"}>
