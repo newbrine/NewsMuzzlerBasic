@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    Box, Heading, Icon, Menu, MenuButton, MenuList, MenuItem, Text, Badge, Modal, ModalOverlay, ModalContent,
+    Box, Heading, Icon, Menu, MenuButton, MenuList, MenuItem, Text, IconButton, Modal, ModalOverlay, ModalContent,
     ModalFooter, ModalHeader, ModalBody, ModalCloseButton, Button, useDisclosure, Grid, Collapse, ThemeProvider, Image
 } from "@chakra-ui/core";
 import "../stylesheets/channelsMain.css";
@@ -23,24 +23,37 @@ export default function SubscriptionCard(){
     };
 
     const buttonsToggle = buttonStatus.map((button, index) =>(
-        <Button key={button.id} mb="10px" _hover={{border:"1px solid rgba(168, 166, 185, 0.5)", borderRadius:"5px"}} size="25px" backgroundColor="#E8E8E8" onClick={updateStatus(index)} >
-            <Box size="15px" textAlign="center">
-                <Image src= {button.buttonState? "https://img.icons8.com/metro/72/expand-arrow.png": "https://img.icons8.com/metro/2x/collapse-arrow.png"}></Image>
+            <Box mb="10px" key={button.id} size="15px" textAlign="center" onClick={updateStatus(index)}>
+                {button.buttonState?
+                    <IconButton
+                        variant="outline"
+                        backgroundColor="#E8E8E8"
+                        aria-label="Collapse"
+                        icon="chevron-down"
+                        size="35px"
+                    />:
+                    <IconButton
+                        variant="outline"
+                        backgroundColor="#E8E8E8"
+                        aria-label="Collapse"
+                        icon="chevron-up"
+                        size="35px"
+                    />}
             </Box>
-        </Button>)
+        )
     );
 
     const subscriptionsArray = [
-        {id: 1, newsletterName: "Ask Leo", likedNumber: "4", savedNumber: "6", receivingEmail: "Work Email",
+        {id: 1, newsletterName: "Ask Leo", likedNumber: "4", savedNumber: "6", receivingEmail: "Work Email", buttonName: "Technology",
             titles: ['"How do I Back Up my Computer?"', '"How do I remove malware?"', '"Dealing with browser problems"'], SubscriptionCarddates: ["June 9th, 2020 10:37AM", "June 8th, 2020 10:37AM", "June 7th, 2020 10:37AM"],
             activity: ["Sent by source", "Read by me", "Sent by source"], dates: ["January 22, 2019, 4:08 PM", "January 22, 2019, 4:08 PM", "January 22, 2019, 4:08 PM"]},
-        {id: 2, newsletterName: "Harvard Business Review", likedNumber: "4", savedNumber: "6", receivingEmail: "Work Email",
+        {id: 2, newsletterName: "Harvard Business Review", likedNumber: "4", savedNumber: "6", receivingEmail: "Work Email", buttonName: "Business",
             titles: ['"How do I Back Up my Computer?"', '"How do I remove malware?"', '"Dealing with browser problems"'],  SubscriptionCarddates: ["June 9th, 2020 10:37AM", "June 8th, 2020 10:37AM", "June 7th, 2020 10:37AM"],
             activity: ["Sent by source", "Read by me", "Sent by source"], dates: ["January 22, 2019, 4:08 PM", "January 22, 2019, 4:08 PM", "January 22, 2019, 4:08 PM"]},
-        {id: 3, newsletterName: "The Skim", likedNumber: "8", savedNumber: "6", receivingEmail: "Work Email",
+        {id: 3, newsletterName: "The Skim", likedNumber: "8", savedNumber: "6", receivingEmail: "Work Email", buttonName: "Travel",
             titles: ['"How do I Back Up my Computer?"', '"How do I remove malware?"', '"Dealing with browser problems"'],  SubscriptionCarddates: ["June 9th, 2020 10:37AM", "June 8th, 2020 10:37AM", "June 7th, 2020 10:37AM"],
             activity: ["Sent by source", "Read by me", "Sent by source"], dates: ["January 22, 2019, 4:08 PM", "January 22, 2019, 4:08 PM", "January 22, 2019, 4:08 PM"]},
-        {id: 4, newsletterName: "The news times", likedNumber: "20", savedNumber: "6", receivingEmail: "Work Email",
+        {id: 4, newsletterName: "The news times", likedNumber: "20", savedNumber: "6", receivingEmail: "Work Email", buttonName: "Social",
             titles: ['"How do I Back Up my Computer?"', '"How do I remove malware?"', '"Dealing with browser problems"'],  SubscriptionCarddates: ["June 9th, 2020 10:37AM", "June 8th, 2020 10:37AM", "June 7th, 2020 10:37AM"],
             activity: ["Sent by source", "Read by me", "Sent by source"], dates: ["January 22, 2019, 4:08 PM", "January 22, 2019, 4:08 PM", "January 22, 2019, 4:08 PM"]},
     ];
@@ -58,7 +71,7 @@ export default function SubscriptionCard(){
                     </Box>
                     <Box textAlign="left">
                         <Heading pt="20px" as="h3" size="md">Category</Heading>
-                        <Button mt="15px" size= "xs" backgroundColor="#6E61BF" _hover={{ bg: "#F2F2F2", color: "#595959" }} className={"channelsMain-Btn channelsMain-xsBtnTxt"}>Technology √</Button>
+                        <Button mt="15px" size= "xs" backgroundColor="#6E61BF" _hover={{ bg: "#F2F2F2", color: "#595959" }} className={"channelsMain-Btn channelsMain-xsBtnTxt"}>{subscrip.buttonName} √</Button>
                     </Box>
                     <Box textAlign="left">
                         <Heading pl="20px" pt="20px" as="h3" size="md">Statistics</Heading>

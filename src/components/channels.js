@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack, Flex, Button, ThemeProvider, Collapse, Image, Input, Textarea} from "@chakra-ui/core";
+import {Box, Stack, Flex, Button, ThemeProvider, Collapse, Image, Input, Textarea, IconButton} from "@chakra-ui/core";
 import "../stylesheets/channelsMain.css";
 
 function EmailData() {
@@ -139,11 +139,23 @@ function EmailData() {
                 </Box>
 
                 <Box paddingTop="10px" margin="0 auto">
-                    <Button _hover={{border:"1px solid rgba(168, 166, 185, 0.5)", borderRadius:"5px"}} size="25px" backgroundColor="#E8E8E8" onClick={content.handleToggle}>
-                        <Box size="15px" textAlign="center">
-                            <Image src= {content.show? "https://img.icons8.com/metro/2x/collapse-arrow.png": "https://img.icons8.com/metro/72/expand-arrow.png"}></Image>
-                        </Box>
-                    </Button>
+                    <Box size="15px" mb="10px"textAlign="center" onClick={content.handleToggle}>
+                        {content.show?
+                            <IconButton
+                                variant="outline"
+                                backgroundColor="#E8E8E8"
+                                aria-label="Collapse"
+                                icon="chevron-down"
+                                size="35px"
+                            />:
+                            <IconButton
+                                variant="outline"
+                                backgroundColor="#E8E8E8"
+                                aria-label="Collapse"
+                                icon="chevron-up"
+                                size="35px"
+                            />}
+                    </Box>
                 </Box>
 
                 <Button position = "absolute" backgroundColor="#E8E8E8" className={"ellipsis-right"}>
