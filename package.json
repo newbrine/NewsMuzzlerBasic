@@ -16,7 +16,7 @@
     "react-icons": "^3.10.0",
     "react-lazyload": "^2.6.8",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "storybook-react-router": "^1.0.8",
     "styled-components": "^5.1.1"
   },
